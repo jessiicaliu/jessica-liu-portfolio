@@ -13,7 +13,7 @@ const WASHI_TAPE_SHADOW = "0 1px 4px rgba(0,0,0,0.06), inset 0 0 0 1px rgba(210,
 const Home = () => {
   const [flipped, setFlipped] = useState(false);
   return (
-    <div className="flex flex-col justify-start pt-28 md:pt-32 lg:pt-36 pb-24 px-8 md:px-16 lg:px-24">
+    <div className="flex flex-col justify-start pt-12 md:pt-32 lg:pt-36 pb-24 px-8 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto w-full">
 
         {/* ── Desktop layout ── */}
@@ -243,101 +243,11 @@ const Home = () => {
             </motion.p>
           </div>
 
-          <motion.div
-            className="flex justify-center mt-8"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 110, damping: 14, delay: 0.28 }}
-          >
-            <motion.div
-              className="relative w-full max-w-[280px]"
-              animate={{ y: [0, -7, 0], rotate: [-1.5, -0.4, -1.5] }}
-              transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 2, repeatDelay: 0 }}
-              whileHover={{
-                y: -14,
-                rotate: 1.5,
-                transition: { type: "spring", stiffness: 200, damping: 16 },
-              }}
-            >
-              <motion.div
-                className="absolute -top-2 -left-2 z-20 w-14 h-[18px] rounded-[2px]"
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ type: "spring", stiffness: 220, damping: 18, delay: 1.2 }}
-                style={{ rotate: "-18deg", background: WASHI_TAPE_BACKGROUND, boxShadow: WASHI_TAPE_SHADOW }}
-              />
-              <motion.div
-                className="absolute -top-5 -right-5 z-30 w-14 h-14"
-                initial={{ scale: 0, rotate: 30 }}
-                animate={{ scale: 1, rotate: 14 }}
-                transition={{ type: "spring", stiffness: 320, damping: 12, delay: 0.95 }}
-                whileHover={{
-                  rotate: 22,
-                  scale: 1.14,
-                  transition: { type: "spring", stiffness: 300, damping: 12 },
-                }}
-              >
-                <img
-                  src="/images/star.svg"
-                  alt=""
-                  aria-hidden="true"
-                  className="w-full h-full select-none pointer-events-none"
-                  style={{ filter: "drop-shadow(1px 3px 6px rgba(0,0,0,0.18)) drop-shadow(0 1px 2px rgba(0,0,0,0.09))" }}
-                />
-              </motion.div>
-              <div
-                className="relative rounded-[0.85rem] border border-[#ebe8e3] bg-[#fefcf9] p-[14px] pb-9"
-                style={{
-                  boxShadow:
-                    "0 2px 6px rgba(0,0,0,0.05), 0 10px 24px -6px rgba(0,0,0,0.15), 0 28px 52px -18px rgba(0,0,0,0.1)",
-                }}
-              >
-                <div
-                  className="relative h-[280px] w-full overflow-hidden rounded-[3px] bg-white cursor-pointer"
-                  style={{ perspective: "1200px" }}
-                  onClick={() => setFlipped((f) => !f)}
-                >
-                  <motion.div
-                    className="absolute inset-0 w-full h-full"
-                    style={{
-                      transformStyle: "preserve-3d",
-                      transition: "transform 0.7s cubic-bezier(.22,1,.36,1)",
-                      transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
-                    }}
-                  >
-                    {/* Front: headshot */}
-                    <div
-                      className="absolute inset-0 w-full h-full"
-                      style={{ backfaceVisibility: "hidden" }}
-                    >
-                      <img
-                        src="/images/headshot.webp"
-                        alt="Jessica Liu headshot"
-                        className="h-full w-full object-cover"
-                        style={{
-                          objectPosition: "center 72%",
-                          transform: "scale(1.08)",
-                          filter: "brightness(1.05) saturate(0.93) contrast(0.91)",
-                        }}
-                      />
-                      <div className="absolute inset-0 rounded-[3px] ring-1 ring-inset ring-black/6" />
-                    </div>
-                    {/* Back: message image */}
-                    <div
-                      className="absolute inset-0 w-full h-full flex items-center justify-center"
-                      style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-                    >
-                      <img
-                        src="/images/poloroid-message.png"
-                        alt="Polaroid message"
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
+          <div className="flex justify-center mt-8">
+            <div className="w-full max-w-[280px]">
+              <PolaroidCard />
+            </div>
+          </div>
 
           <motion.p
             className="mt-8 font-sans text-[15px] text-foreground/55 leading-relaxed"
