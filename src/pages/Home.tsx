@@ -99,7 +99,12 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 110, damping: 14, delay: 0.38 }}
           >
-            <div className="relative w-full max-w-[330px] mt-20">
+            <motion.div
+              className="relative w-full max-w-[330px] mt-20"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ scale: 1.025, rotate: 1 }}
+            >
               <div
                 className="absolute -top-2 -left-2 z-20 w-14 h-[18px] rounded-[2px]"
                 style={{ rotate: "-18deg", background: WASHI_TAPE_BACKGROUND, boxShadow: WASHI_TAPE_SHADOW }}
@@ -120,7 +125,7 @@ const Home = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -162,7 +167,12 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 110, damping: 14, delay: 0.28 }}
           >
-            <div className="relative w-full max-w-[280px]">
+            <motion.div
+              className="relative w-full max-w-[280px]"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ scale: 1.025, rotate: 1 }}
+            >
               <div
                 className="absolute -top-2 -left-2 z-20 w-14 h-[18px] rounded-[2px]"
                 style={{ rotate: "-18deg", background: WASHI_TAPE_BACKGROUND, boxShadow: WASHI_TAPE_SHADOW }}
@@ -183,7 +193,7 @@ const Home = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           <motion.p
