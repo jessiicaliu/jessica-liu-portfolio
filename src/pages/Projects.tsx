@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 type Project = {
@@ -35,27 +36,40 @@ const Projects = () => {
   return (
     <div className="px-6 md:px-16 lg:px-24 pt-20 pb-24">
       <div className="max-w-5xl mx-auto">
-        <div className="mb-14">
+        <motion.div
+          className="mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-primary/45 mb-3 font-semibold">
             ✦ Selected Work
           </p>
-          <h1 className="font-display text-4xl md:text-5xl text-primary">Projects</h1>
-        </div>
+          <h1 className="inline-block font-display text-4xl md:text-5xl leading-[1.32] pt-1 pb-2 text-primary">Projects</h1>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {projects.map((project) => (
-            <div
+          {projects.map((project, i) => (
+            <motion.div
               key={project.name}
-              className="rounded-2xl bg-pink-soft/20 border border-primary/10 p-6"
+              className="group relative rounded-2xl bg-pink-soft/20 border border-primary/10 p-6 hover:border-primary/25 hover:bg-pink-soft/30 transition-all duration-300 cursor-pointer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              whileHover={{ y: -3 }}
             >
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <h3 className="font-display text-xl text-foreground/85">{project.name}</h3>
+                  <h3 className="font-display text-xl text-foreground/85 group-hover:text-primary transition-colors duration-300">
+                    {project.name}
+                  </h3>
                   <p className="font-sans text-[11px] text-primary/40 uppercase tracking-[0.15em] mt-0.5 font-semibold">
                     {project.year}
                   </p>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-primary/20 shrink-0 mt-1" />
+                <ArrowUpRight className="w-4 h-4 text-primary/20 group-hover:text-primary/50 transition-all duration-300 shrink-0 mt-1" />
               </div>
 
               <p className="font-sans text-sm text-foreground/50 leading-relaxed mb-5">
@@ -72,7 +86,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
