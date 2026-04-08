@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import TypingText from "@/components/TypingText";
+import DictionaryEntry from "@/components/DictionaryEntry";
 
 const WASHI_TAPE_BACKGROUND = "linear-gradient(135deg, rgba(255,208,215,0.68) 0%, rgba(244,188,198,0.54) 100%)";
 const WASHI_TAPE_SHADOW = "0 1px 4px rgba(0,0,0,0.06), inset 0 0 0 1px rgba(210,145,158,0.18)";
@@ -39,6 +40,10 @@ const Home = () => {
               <br /><br />
               I'm currently open to Fall 2026 and Summer 2027 opportunities. Happy to chat!
             </p>
+
+            <div className="mt-8">
+              <DictionaryEntry />
+            </div>
 
             <div className="mt-7">
               <a
@@ -138,6 +143,10 @@ const Home = () => {
             <br /><br />
             I'm currently open to Fall 2026 and Summer 2027 opportunities. Happy to chat!
           </p>
+
+          <div className="mt-8">
+            <DictionaryEntry />
+          </div>
 
           <div className="mt-7">
             <a
