@@ -43,7 +43,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name = "Jessica Liu" }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.55 }}
       >
-        <span className="mr-2">A</span>
+        <span className="mr-2">a</span>
         <TypingText />
       </motion.p>
     </>

@@ -8,7 +8,7 @@ interface ContactLinksProps {
 const links = [
   {
     href: "#contact",
-    label: "Get In Touch",
+    label: "Get in Touch",
     icon: <ArrowUpRight className="w-3.5 h-3.5 group-hover:-translate-y-[1px] group-hover:translate-x-[1px] transition-transform duration-200" />,
     prefix: "✦",
   },

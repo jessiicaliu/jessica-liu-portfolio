@@ -18,7 +18,7 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
         />
         <div className="min-w-0 text-left">
           <h3 className="font-sans text-base md:text-lg text-foreground/75 font-semibold">
-            management engineering
+            Management Engineering
           </h3>
           <p className="mt-1 text-[11px] font-sans text-primary/45 tracking-wide">
             [man-ij-muhnt en-juh-neer-ing] • noun
@@ -27,8 +27,8 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
       </div>
 
       <p className="mt-3 ml-3 text-sm font-sans text-foreground/55 leading-relaxed">
-        A multidisciplinary field combining software engineering, business, and data to design and
-        optimize systems.
+        a multidisciplinary field combining software engineering, business, and data to design and
+        optimize systems
       </p>
     </div>
   );
