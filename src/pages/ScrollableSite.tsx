@@ -1,4 +1,5 @@
 import Home from "./Home";
+import Experience from "./Experience";
 
 const ScrollableSite = () => {
   return (
@@ -7,8 +8,8 @@ const ScrollableSite = () => {
         <Home />
       </section>
 
-      <section id="experience" className="scroll-mt-20 px-8 md:px-16 lg:px-24 py-24">
-        <h1 className="font-display text-4xl text-primary">Experience</h1>
+      <section id="experience" className="scroll-mt-20">
+        <Experience />
       </section>
 
       <section id="projects" className="scroll-mt-20 px-8 md:px-16 lg:px-24 py-24">
