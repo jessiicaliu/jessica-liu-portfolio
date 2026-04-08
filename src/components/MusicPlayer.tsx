@@ -162,10 +162,6 @@ const MusicPlayer = () => {
           <span className="pointer-events-none absolute inset-[5px] rounded-full border border-white/55" />
           <span className="pointer-events-none absolute inset-[10px] rounded-full border border-[#e3a9c6]/80" />
           <span className="pointer-events-none absolute left-1/2 top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d39ab9] bg-[#fff8fc]" />
-          {/* X icon in the center of the button */}
-          <span className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-            <X className="h-5 w-5 text-[#b5487a] opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
-          </span>
         </div>
 
         <AnimatePresence>
