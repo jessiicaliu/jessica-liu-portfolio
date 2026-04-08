@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import TypingText from "@/components/TypingText";
 
 const Home = () => {
   return (
@@ -15,7 +16,8 @@ const Home = () => {
         </h1>
 
         <p className="mt-4 font-sans text-lg md:text-xl text-foreground/60">
-          A Software Developer & Management Engineering Student
+          <span className="mr-2">A</span>
+          <TypingText />
         </p>
 
         <p className="mt-6 font-sans text-[15px] text-foreground/55 leading-relaxed max-w-xl">
