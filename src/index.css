@@ -1,3 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Abril+Fatface&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 340 20% 16%;
+
+    --card: 340 30% 97%;
+    --card-foreground: 340 20% 16%;
+
+    --primary: 340 72% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 20 60% 92%;
+    --secondary-foreground: 20 30% 25%;
+
+    --muted: 340 20% 94%;
+    --muted-foreground: 340 10% 42%;
+
+    --accent: 320 40% 90%;
+    --accent-foreground: 320 25% 22%;
+
+    --border: 340 25% 90%;
+    --input: 340 25% 90%;
+    --ring: 340 72% 62%;
+    --radius: 1rem;
+
+    --warm: 25 55% 90%;
+    --sage: 150 20% 82%;
+    --rose: 340 72% 62%;
+    --cream: 30 60% 95%;
+    --peach: 15 70% 88%;
+    --blush: 345 50% 90%;
+    --mint: 160 25% 87%;
+    --lilac: 280 35% 88%;
+    --sky: 210 35% 88%;
+    --pink-glow: 340 80% 75%;
+    --pink-soft: 345 55% 92%;
+
+    --font-display: 'Abril Fatface', Georgia, serif;
+    --font-sans: 'Outfit', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse at 80% 0%, hsl(340 72% 62% / 0.07) 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 100%, hsl(30 60% 95% / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsl(345 55% 92% / 0.08) 0%, transparent 60%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-serif, .font-display {
+    font-family: var(--font-display);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .text-gradient-rose {
+    background: linear-gradient(135deg, hsl(340 72% 58%), hsl(320 60% 65%), hsl(280 45% 68%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-pink {
+    background: linear-gradient(135deg, hsl(340 80% 65%), hsl(350 70% 72%), hsl(10 60% 75%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-glass {
+    background: hsl(0 0% 99% / 0.6);
+    backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid hsl(340 25% 90% / 0.6);
+  }
+
+  .bg-glass-pink {
+    background: hsl(340 72% 62% / 0.06);
+    backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid hsl(340 50% 85% / 0.4);
+  }
+
+  .sparkle-shadow {
+    box-shadow:
+      0 2px 20px -4px hsl(340 72% 62% / 0.12),
+      0 8px 40px -8px hsl(340 50% 85% / 0.15);
+  }
+
+  .glow-pink {
+    box-shadow:
+      0 0 30px hsl(340 72% 62% / 0.15),
+      0 0 60px hsl(340 72% 62% / 0.08);
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-8px) rotate(1deg); }
+    66% { transform: translateY(-4px) rotate(-1deg); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(10px, -15px) rotate(5deg); }
+    50% { transform: translate(-5px, -25px) rotate(-3deg); }
+    75% { transform: translate(-15px, -10px) rotate(2deg); }
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+
+  @keyframes caret-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  @keyframes heart-float {
+    0%, 100% { transform: translateY(0) rotate(-45deg) scale(1); }
+    50% { transform: translateY(-1px) rotate(-45deg) scale(1.05); }
+  }
+
+  .aesthetic-heart {
+    position: relative;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(-45deg);
+    background: hsl(340 84% 69%);
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px hsl(340 85% 82% / 0.35), 0 3px 7px hsl(340 84% 69% / 0.22);
+    animation: heart-float 2.4s ease-in-out infinite;
+    vertical-align: middle;
+  }
+
+  .aesthetic-heart::before,
+  .aesthetic-heart::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: hsl(340 84% 69%);
+    border-radius: 999px;
+  }
+
+  .aesthetic-heart::before {
+    top: -4px;
+    left: 0;
+  }
+
+  .aesthetic-heart::after {
+    left: 4px;
+    top: 0;
+  }
+
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
+  .animate-sparkle { animation: sparkle 2s ease-in-out infinite; }
+  .animate-drift { animation: drift 8s ease-in-out infinite; }
+  .animate-pulse-soft { animation: pulse-soft 4s ease-in-out infinite; }
+}
