@@ -70,7 +70,7 @@ const TechSection = ({ tech }: { tech: string[] }) => (
 
 const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => void }) => (
   <motion.div
-    className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+    className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-8"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
@@ -85,7 +85,7 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
     />
 
     <motion.div
-      className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white/95 backdrop-blur-xl rounded-3xl border border-primary/12 shadow-2xl"
+      className="relative w-full max-w-2xl max-h-[92vh] sm:max-h-[85vh] overflow-y-auto bg-white/95 backdrop-blur-xl rounded-t-2xl sm:rounded-3xl border border-primary/12 shadow-2xl"
       initial={{ scale: 0.92, y: 30 }}
       animate={{ scale: 1, y: 0 }}
       exit={{ scale: 0.92, y: 30, opacity: 0 }}
@@ -98,17 +98,17 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
         <X className="w-4 h-4" />
       </button>
 
-      <div className="relative px-8 pt-8 pb-6 overflow-hidden">
+      <div className="relative px-5 pt-6 pb-4 sm:px-8 sm:pt-8 sm:pb-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-pink-soft/25 to-transparent pointer-events-none" />
         <div className="relative">
           <p className="font-sans text-[13px] text-primary/65 font-medium mb-1.5">
             {project.tagline.charAt(0).toUpperCase() + project.tagline.slice(1)} · {project.year}
           </p>
-          <h2 className="font-display text-3xl md:text-4xl text-foreground/90">{project.name}</h2>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground/90">{project.name}</h2>
         </div>
       </div>
 
-      <div className="px-8 pb-8">
+      <div className="px-5 pb-6 sm:px-8 sm:pb-8">
         <p className="font-sans text-sm text-foreground/55 leading-relaxed mb-8">
           {project.description}
         </p>
