@@ -5,9 +5,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ["Abril Fatface", "Georgia", "serif"],
-        sans: ["Outfit", "system-ui", "sans-serif"],
-        serif: ["Abril Fatface", "Georgia", "serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+        serif: ["Playfair Display", "Georgia", "serif"],
       },
       colors: {
         warm: "hsl(var(--warm))",

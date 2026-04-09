@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+}
 
 @tailwind base;
 @tailwind components;
@@ -40,9 +45,6 @@
     --sky: 210 35% 88%;
     --pink-glow: 340 80% 75%;
     --pink-soft: 345 55% 92%;
-
-    --font-display: 'Abril Fatface', Georgia, serif;
-    --font-sans: 'Outfit', system-ui, sans-serif;
   }
 }
 
