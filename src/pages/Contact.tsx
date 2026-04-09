@@ -1,29 +1,36 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Heart, Linkedin, Mail, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Check, Copy, Github, Heart, Linkedin, Mail, type LucideIcon } from "lucide-react";
+import { useState } from "react";
 
 type SocialLink = {
   icon: LucideIcon;
   label: string;
+  handle: string;
   href: string;
   color: string;
+  copyValue?: string;
 };
 
 const socials: SocialLink[] = [
   {
     icon: Linkedin,
     label: "LinkedIn",
+    handle: "@jessiicaliu",
     href: "https://www.linkedin.com/in/jessiicaliu/",
     color: "group-hover:text-[#0077B5]",
   },
   {
     icon: Mail,
     label: "Email",
+    handle: "jessica.liu3@uwaterloo.ca",
     href: "mailto:jessica.liu3@uwaterloo.ca",
     color: "group-hover:text-primary",
+    copyValue: "jessica.liu3@uwaterloo.ca",
   },
   {
     icon: Github,
     label: "GitHub",
+    handle: "@jessiicaliu",
     href: "https://github.com/jessiicaliu",
     color: "group-hover:text-foreground",
   },
@@ -31,6 +38,14 @@ const socials: SocialLink[] = [
 
 const Contact = () => {
   const currentYear = new Date().getFullYear();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = (e: React.MouseEvent, value: string) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <div className="px-6 md:px-16 lg:px-24 pt-20 pb-12">
@@ -101,7 +116,7 @@ const Contact = () => {
           Always open to new projects, opportunities, and good conversations.
         </motion.p>
 
-        {/* Social links — horizontal row */}
+        {/* Social links */}
         <div className="flex flex-wrap gap-3">
           {socials.map((s, i) => (
             <motion.a
@@ -109,20 +124,37 @@ const Contact = () => {
               href={s.href}
               target={s.href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="group flex items-center gap-2.5 px-5 py-3 rounded-full border border-primary/12 bg-pink-soft/10 hover:bg-pink-soft/25 hover:border-primary/25 transition-all duration-300"
+              className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-primary/12 bg-pink-soft/10 hover:bg-pink-soft/25 hover:border-primary/25 transition-all duration-300"
               initial={{ opacity: 0, x: -16, filter: "blur(4px)" }}
               whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 + i * 0.08, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -3 }}
             >
-              <s.icon
-                className={`w-3.5 h-3.5 text-primary/40 transition-colors duration-300 ${s.color}`}
-              />
-              <span className="font-sans text-sm text-foreground/55 group-hover:text-foreground/85 transition-colors duration-300 font-medium">
-                {s.label}
-              </span>
-              <ArrowUpRight className="w-3 h-3 text-primary/20 group-hover:text-primary/50 transition-all duration-300 group-hover:translate-x-px group-hover:-translate-y-px" />
+              <s.icon className={`w-3.5 h-3.5 text-primary/40 transition-colors duration-300 ${s.color} shrink-0`} />
+              <div className="flex flex-col gap-0.5">
+                <span className="font-sans text-sm text-foreground/55 group-hover:text-foreground/85 transition-colors duration-300 font-medium leading-none">
+                  {s.label}
+                </span>
+                <span className="font-sans text-[11px] text-foreground/30 group-hover:text-foreground/50 transition-colors duration-300 leading-none">
+                  {s.handle}
+                </span>
+              </div>
+              <div className="ml-1 flex items-center gap-1">
+                {s.copyValue && (
+                  <button
+                    onClick={(e) => handleCopy(e, s.copyValue!)}
+                    className="p-1 rounded-md text-primary/20 hover:text-primary/60 hover:bg-primary/8 transition-all duration-200"
+                    aria-label="Copy email address"
+                  >
+                    {copied
+                      ? <Check className="w-3 h-3 text-primary/60" />
+                      : <Copy className="w-3 h-3" />
+                    }
+                  </button>
+                )}
+                <ArrowUpRight className="w-3 h-3 text-primary/20 group-hover:text-primary/50 transition-all duration-300 group-hover:translate-x-px group-hover:-translate-y-px" />
+              </div>
             </motion.a>
           ))}
         </div>
