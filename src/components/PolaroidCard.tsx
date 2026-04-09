@@ -14,6 +14,34 @@ export default function PolaroidCard() {
           "0 2px 6px rgba(0,0,0,0.05), 0 10px 24px -6px rgba(0,0,0,0.15), 0 28px 52px -18px rgba(0,0,0,0.1)",
       }}
     >
+      {/* Washi tape */}
+      <motion.div
+        className="absolute -top-2 -left-2 z-20 w-14 h-[18px] rounded-[2px]"
+        initial={{ opacity: 0, y: -5 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 220, damping: 18, delay: 1.2 }}
+        style={{ rotate: "-18deg", background: WASHI_TAPE_BACKGROUND, boxShadow: WASHI_TAPE_SHADOW }}
+      />
+      {/* Star sticker */}
+      <motion.div
+        className="absolute -top-5 -right-5 z-30 w-16 h-16"
+        initial={{ scale: 0, rotate: 30 }}
+        animate={{ scale: 1, rotate: 14 }}
+        transition={{ type: "spring", stiffness: 320, damping: 12, delay: 0.95 }}
+        whileHover={{
+          rotate: 22,
+          scale: 1.14,
+          transition: { type: "spring", stiffness: 300, damping: 12 },
+        }}
+      >
+        <img
+          src="/images/star.svg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full select-none pointer-events-none"
+          style={{ filter: "drop-shadow(1px 3px 6px rgba(0,0,0,0.18)) drop-shadow(0 1px 2px rgba(0,0,0,0.09))" }}
+        />
+      </motion.div>
       <div
         className="relative h-[332px] w-full overflow-hidden rounded-[3px] bg-white cursor-pointer"
         style={{ perspective: "1200px" }}
