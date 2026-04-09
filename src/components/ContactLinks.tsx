@@ -1,35 +1,32 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ContactLinksProps {
   className?: string;
 }
 
-const links = [
-  {
-    href: "#contact",
-    label: "Get in Touch",
-    icon: <ArrowUpRight className="w-3.5 h-3.5 group-hover:-translate-y-[1px] group-hover:translate-x-[1px] transition-transform duration-200" />,
-    prefix: "✦",
-  },
-  // Add more links here as needed
-];
-
 const ContactLinks: React.FC<ContactLinksProps> = ({ className = "" }) => (
-  <div className={`flex items-center gap-4 ${className}`}>
-    {links.map((link) => (
-      <a
-        key={link.href}
-        href={link.href}
-        className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#f0cfdd] bg-[#fff7fb] text-[#b5487a] font-sans text-sm font-semibold shadow-[0_4px_12px_-8px_rgba(181,72,122,0.35)] transition-all duration-250"
+  <div className={`flex items-center ${className}`}>
+    <motion.a
+      href="#contact"
+      className="group relative inline-flex items-center gap-2.5 font-display text-[15px] text-foreground/65 hover:text-foreground/90 transition-colors duration-300"
+      whileHover={{ x: 3 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    >
+      <span className="text-[10px] text-foreground/25 group-hover:text-primary/50 transition-colors duration-300">✦</span>
+      <span className="font-semibold text-foreground/70 border border-foreground/15 rounded-lg px-3 py-1 shadow-lg ring-1 ring-primary/10 transition-all duration-200 bg-transparent backdrop-blur-sm bg-glass/80 group-hover:bg-primary/10 group-hover:scale-105 group-hover:shadow-xl">
+        Get in touch
+      </span>
+      <motion.span
+        className="inline-block text-foreground/30 group-hover:text-primary/50 transition-colors duration-300"
+        animate={{ x: [0, 3, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
-        <span className="text-[12px] text-[#d678a0]">{link.prefix}</span>
-        {link.label}
-        <span className="relative inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#fbe9f1] border border-[#efcddd]">
-          {link.icon}
-        </span>
-      </a>
-    ))}
+        →
+      </motion.span>
+
+      {/* Removed hover underline for a cleaner look */}
+    </motion.a>
   </div>
 );
 
