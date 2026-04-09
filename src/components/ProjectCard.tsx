@@ -22,10 +22,10 @@ const ProjectCard = ({
 }) => (
   <motion.div
     className="group relative cursor-pointer rounded-xl bg-white/80 border border-primary/10 p-4 md:p-5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col gap-2 min-h-[160px]"
-    initial={{ opacity: 0, y: 30 }}
+    initial={{ opacity: 0, y: 14 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-60px" }}
-    transition={{ duration: 0.6, delay: index * 0.12 }}
+    viewport={{ once: true, margin: "-40px" }}
+    transition={{ duration: 0.45, delay: index * 0.08 }}
     onClick={onOpen}
     whileHover={{ y: -3, scale: 1.01 }}
   >

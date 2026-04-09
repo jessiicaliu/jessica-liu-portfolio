@@ -72,10 +72,10 @@ const CardContent = ({ exp, i }: { exp: ExperienceEntry; i: number }) => (
               background: "hsl(340 72% 62% / 0.08)",
               border: "1px solid hsl(340 72% 62% / 0.12)",
             }}
-            initial={{ opacity: 0, x: 8 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.08 + 0.2 }}
+            transition={{ delay: i * 0.06 + 0.15 }}
           >
             {exp.period}
           </motion.span>
@@ -99,10 +99,10 @@ const CardContent = ({ exp, i }: { exp: ExperienceEntry; i: number }) => (
             <motion.li
               key={j}
               className="font-sans text-[12.5px] leading-[1.6] text-foreground/50 flex items-start gap-2.5 group/b"
-              initial={{ opacity: 0, x: -8 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: i * 0.08 + j * 0.04 + 0.3 }}
+              transition={{ duration: 0.3, delay: i * 0.06 + j * 0.03 + 0.2 }}
             >
               <span
                 className="mt-[7px] shrink-0 w-[4px] h-[4px] rounded-full group-hover/b:scale-150 transition-all duration-300"
@@ -136,10 +136,10 @@ const Experience = () => {
         {/* Header */}
         <motion.div
           className="mb-14"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
           <motion.p
             className="text-[11px] font-sans uppercase tracking-[0.35em] text-primary/40 mb-3 font-semibold"
@@ -159,10 +159,10 @@ const Experience = () => {
             <motion.div
               key={exp.company}
               className="relative pl-9 pb-6"
-              initial={{ opacity: 0, x: -18 }}
+              initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.55, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.45, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Dot */}
               <motion.div

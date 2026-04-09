@@ -8,10 +8,9 @@ export default function PolaroidCard() {
   const [flipped, setFlipped] = useState(false);
   return (
     <motion.div
-      className="relative rounded-[0.85rem] border border-pink-400 bg-[#fefcf9] p-[14px] pb-11"
+      className="relative rounded-[0.85rem] bg-[#fefcf9] p-[14px] pb-11"
       style={{
-        boxShadow:
-          "0 2px 6px rgba(0,0,0,0.05), 0 10px 24px -6px rgba(0,0,0,0.15), 0 28px 52px -18px rgba(0,0,0,0.1)",
+        boxShadow: "0 2px 12px 0 hsl(340,72%,80%,0.13)",
       }}
     >
       {/* Washi tape */}
@@ -70,7 +69,7 @@ export default function PolaroidCard() {
                 filter: "brightness(1.05) saturate(0.93) contrast(0.91)",
               }}
             />
-            <div className="absolute inset-0 rounded-[3px] ring-1 ring-inset ring-black/6" />
+
           </div>
           {/* Back: message image */}
           <div

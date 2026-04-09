@@ -17,13 +17,13 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
         onMouseLeave={() => setHovered(false)}
       >
         <motion.div
-          className="relative rounded-xl px-10 py-6 md:px-14 md:py-7 border border-primary/10 bg-white/60 backdrop-blur-[6px] shadow-none"
+          className="relative rounded-xl px-10 py-6 md:px-14 md:py-7 border border-primary/10 bg-white/60 backdrop-blur-[6px] shadow-none ring-1 ring-inset ring-pink-400/40"
           style={{
             fontFamily: "var(--font-sans)",
             background: "linear-gradient(135deg, rgba(255,255,255,0.55) 60%, hsl(340,72%,98%) 100%)",
             boxShadow: "0 2px 12px 0 hsl(340,72%,80%,0.13)",
           }}
-          initial={{ opacity: 0, y: 18, rotate: -0.8 }}
+          initial={{ opacity: 0, y: 10, rotate: -0.4 }}
           animate={{ opacity: 1, y: hovered ? -4 : 0, rotate: hovered ? 0.6 : 0 }}
           transition={
             hovered
@@ -78,13 +78,13 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
       {/* Mobile */}
       <div className={`relative w-full block sm:hidden ${className}`}>
         <motion.div
-          className="relative rounded-lg px-5 py-4 border border-primary/10 bg-white/70 backdrop-blur-[4px]"
+          className="relative rounded-lg px-5 py-4 border border-primary/10 bg-white/70 backdrop-blur-[4px] ring-1 ring-inset ring-pink-400/30"
           style={{
             fontFamily: "var(--font-sans)",
             background: "linear-gradient(135deg, rgba(255,255,255,0.55) 60%, hsl(340,72%,98%) 100%)",
             boxShadow: "0 1px 6px 0 hsl(340,72%,80%,0.10)",
           }}
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 36, damping: 26 }}
         >

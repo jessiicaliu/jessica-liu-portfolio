@@ -17,8 +17,8 @@ const SectionDivider = () => (
     <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/30 to-primary/40" />
     <motion.span
       className="mx-4 text-xs text-primary/60 font-sans select-none"
-      animate={{ opacity: [0.6, 1, 0.6], rotate: [0, 180, 360] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+      animate={{ opacity: [0.5, 0.85, 0.5] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
     >
       ✦
     </motion.span>

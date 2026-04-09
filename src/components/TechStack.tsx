@@ -134,12 +134,11 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.88, y: 8 },
+  hidden: { opacity: 0, y: 5 },
   visible: {
     opacity: 1,
-    scale: 1,
     y: 0,
-    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -149,10 +148,10 @@ const TechStack = () => {
       {stack.map((category, catIdx) => (
         <motion.div
           key={category.label}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.5, delay: catIdx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, delay: catIdx * 0.06, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="flex items-center gap-3 mb-5">
             <span className="font-sans text-[11px] uppercase tracking-[0.28em] font-semibold text-foreground/50">

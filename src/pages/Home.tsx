@@ -27,7 +27,7 @@ const Home = () => {
 
             <motion.div
               className="mt-6"
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.6 }}
             >
@@ -36,7 +36,7 @@ const Home = () => {
 
             <motion.div
               className="mt-7"
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
@@ -45,7 +45,7 @@ const Home = () => {
 
             <motion.div
               className="mt-10"
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.55 }}
             >
@@ -56,18 +56,18 @@ const Home = () => {
           {/* Right col — polaroid */}
           <motion.div
             className="md:col-span-2 flex justify-end"
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 110, damping: 14, delay: 0.38 }}
+            transition={{ type: "spring", stiffness: 120, damping: 18, delay: 0.38 }}
           >
             <motion.div
               className="relative w-full max-w-[330px] mt-20"
-              animate={{ y: [0, -7, 0], rotate: [-1.5, -0.4, -1.5] }}
-              transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 2, repeatDelay: 0 }}
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2, repeatDelay: 2 }}
               whileHover={{
-                y: -14,
-                rotate: 1.5,
-                transition: { type: "spring", stiffness: 200, damping: 16 },
+                y: -8,
+                scale: 1.02,
+                transition: { type: "spring", stiffness: 200, damping: 20 },
               }}
             >
               <PolaroidCard />
@@ -89,7 +89,7 @@ const Home = () => {
 
           <motion.div
             className="mt-8"
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.6 }}
           >
@@ -98,7 +98,7 @@ const Home = () => {
 
           <motion.div
             className="mt-9"
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.55 }}
           >
@@ -107,7 +107,7 @@ const Home = () => {
 
           <motion.div
             className="mt-7"
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
