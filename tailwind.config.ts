@@ -8,6 +8,7 @@ export default {
         display: ["Playfair Display", "Georgia", "serif"],
         sans: ["DM Sans", "system-ui", "sans-serif"],
         serif: ["Playfair Display", "Georgia", "serif"],
+        mono: ["JetBrains Mono", "Menlo", "monospace"],
       },
       colors: {
         warm: "hsl(var(--warm))",

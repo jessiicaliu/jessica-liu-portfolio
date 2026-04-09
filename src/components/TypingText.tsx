@@ -55,7 +55,7 @@ const TypingText = () => {
   }, [displayed, isDeleting, roleIndex]);
 
   return (
-    <span className="inline-block min-w-[19ch] whitespace-nowrap leading-none align-baseline text-primary font-mono font-semibold tracking-[0.01em]">
+    <span className="inline-block min-w-[19ch] whitespace-nowrap leading-none align-baseline text-primary font-jetbrains font-semibold tracking-[0.01em]">
       <span className="align-baseline">{displayed}</span>
       <span
         className="ml-1 inline-block h-[0.95em] w-[2px] rounded-full bg-primary align-baseline translate-y-[0.14em]"
