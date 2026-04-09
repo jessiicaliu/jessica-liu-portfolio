@@ -6,16 +6,15 @@ interface ProfileDescriptionProps {
 
 const defaultText = (
   <>
-    Hello! I'm a 2nd-year Management Engineering student at the University of Waterloo,
-    minoring in computing and AI. I like taking ideas from start to finish and working on
-    thoughtful solutions that keep people in mind. I'm interested in software engineering,
-    data, and product roles.
+    I'm a 2nd-year <span className="text-primary font-semibold" style={{ color: 'hsl(var(--primary))' }}>Management Engineering</span> student at the <span className="text-primary font-semibold" style={{ color: 'hsl(var(--primary))' }}>University of Waterloo</span>,
+    minoring in computing & AI. I like taking ideas from start to finish and working on
+    thoughtful solutions that keep people in mind.
     <br /><br />
     When I'm not at my desk, you'll find me at the gym, catching a concert, or grabbing
     sushi with friends. I also enjoy volunteering and staying connected to the engineering
     community.
     <br /><br />
-    I'm currently open to Fall 2026 and Summer 2027 opportunities. Happy to chat!
+    Open to <span className="font-semibold text-foreground/70">SWE, data, and product</span> opportunities for <span className="font-semibold text-foreground/70">Fall 2026</span> & <span className="font-semibold text-foreground/70">Summer 2027</span>.
   </>
 );
 
