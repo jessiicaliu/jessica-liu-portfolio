@@ -8,7 +8,7 @@ export default function PolaroidCard() {
   const [flipped, setFlipped] = useState(false);
   return (
     <motion.div
-      className="relative rounded-[0.85rem] border border-[#ebe8e3] bg-[#fefcf9] p-[14px] pb-11"
+      className="relative rounded-[0.85rem] border border-pink-400 bg-[#fefcf9] p-[14px] pb-11"
       style={{
         boxShadow:
           "0 2px 6px rgba(0,0,0,0.05), 0 10px 24px -6px rgba(0,0,0,0.15), 0 28px 52px -18px rgba(0,0,0,0.1)",
