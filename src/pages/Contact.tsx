@@ -144,16 +144,16 @@ const Contact = () => {
                 {s.copyValue && (
                   <button
                     onClick={(e) => handleCopy(e, s.copyValue!)}
-                    className="p-1 rounded-md text-primary/20 hover:text-primary/60 hover:bg-primary/8 transition-all duration-200"
+                    className={`p-1 rounded-md transition-all duration-200 ${copied ? "text-primary" : "text-foreground/70"} hover:text-primary hover:bg-primary/8`}
                     aria-label="Copy email address"
                   >
                     {copied
-                      ? <Check className="w-3 h-3 text-primary/60" />
-                      : <Copy className="w-3 h-3" />
+                      ? <Check className="w-3 h-3" />
+                      : <Copy className="w-3 h-3 transition-colors duration-200" />
                     }
                   </button>
                 )}
-                <ArrowUpRight className="w-4 h-4 text-primary/50 group-hover:text-primary transition-all duration-300 group-hover:translate-x-px group-hover:-translate-y-px" />
+                <ArrowUpRight className="w-4 h-4 text-foreground/70 group-hover:text-primary transition-all duration-300 group-hover:translate-x-px group-hover:-translate-y-px" />
               </div>
             </motion.a>
           ))}
