@@ -44,7 +44,7 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              className="mt-8"
+              className="mt-10"
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.55 }}
@@ -97,7 +97,7 @@ const Home = () => {
           </motion.div>
 
           <motion.div
-            className="mt-8"
+            className="mt-9"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.55 }}

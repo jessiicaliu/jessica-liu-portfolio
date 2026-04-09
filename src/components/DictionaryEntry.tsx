@@ -14,60 +14,56 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
   return (
     // Stable wrapper — never moves, so onMouseLeave fires reliably
     <div
-      className={`relative max-w-md ${className}`}
+      className={`relative max-w-2xl min-w-[520px] ${className}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <motion.div
-        className="relative bg-[#fefefe] border border-[#ebe8e3] rounded-xl p-6 md:p-7"
-        style={{ fontFamily: "var(--font-sans)" }}
-        initial={{ opacity: 0, y: 18, rotate: -0.8, boxShadow: REST_SHADOW }}
+        className="relative rounded-xl px-10 py-6 md:px-14 md:py-7 border border-primary/10 bg-white/60 backdrop-blur-[6px] shadow-none"
+        style={{ fontFamily: "var(--font-sans)", background: "linear-gradient(135deg, rgba(255,255,255,0.55) 60%, hsl(340,72%,98%) 100%)", boxShadow: '0 2px 12px 0 hsl(340,72%,80%,0.13)' }}
+        initial={{ opacity: 0, y: 18, rotate: -0.8 }}
         animate={{
           opacity: 1,
           y: hovered ? -4 : 0,
           rotate: hovered ? 0.6 : 0,
-          boxShadow: hovered ? HOVER_SHADOW : REST_SHADOW,
         }}
         transition={
           hovered
-            ? { type: "spring", stiffness: 220, damping: 18 }
-            : { type: "spring", stiffness: 120, damping: 16, delay: 0 }
+            ? { type: "spring", stiffness: 48, damping: 28 }
+            : { type: "spring", stiffness: 36, damping: 26, delay: 0 }
         }
       >
-        {/* Thumbtack */}
+        {/* Washi tape */}
         <motion.div
-          className="absolute -top-4 right-7 z-10 pointer-events-none select-none"
+          className="absolute -top-2 -left-2 z-20 w-14 h-[18px] rounded-[2px]"
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 220, damping: 18, delay: 1.2 }}
+          style={{ rotate: "-18deg", background: "linear-gradient(135deg, rgba(255,208,215,0.68) 0%, rgba(244,188,198,0.54) 100%)", boxShadow: "0 1px 4px rgba(0,0,0,0.06), inset 0 0 0 1px rgba(210,145,158,0.18)" }}
+        />
+        {/* Star sticker */}
+        <motion.div
+          className="absolute -top-5 -right-5 z-30 w-16 h-16"
           initial={{ scale: 0, rotate: 30 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 14, delay: 1.0 }}
+          animate={{ scale: 1, rotate: 14 }}
+          transition={{ type: "spring", stiffness: 320, damping: 12, delay: 0.95 }}
+          whileHover={{
+            rotate: 22,
+            scale: 1.14,
+            transition: { type: "spring", stiffness: 300, damping: 12 },
+          }}
         >
-          <svg viewBox="0 0 22 32" width="22" height="32" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="tack-head" cx="38%" cy="32%" r="65%">
-                <stop offset="0%" stopColor="hsl(340, 80%, 80%)" />
-                <stop offset="55%" stopColor="hsl(340, 72%, 62%)" />
-                <stop offset="100%" stopColor="hsl(340, 72%, 44%)" />
-              </radialGradient>
-              <linearGradient id="tack-stem" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="hsl(340, 20%, 48%)" />
-                <stop offset="40%" stopColor="hsl(340, 15%, 68%)" />
-                <stop offset="100%" stopColor="hsl(340, 20%, 44%)" />
-              </linearGradient>
-              <filter id="tack-shadow" x="-40%" y="-20%" width="180%" height="200%">
-                <feGaussianBlur stdDeviation="1.5" />
-              </filter>
-            </defs>
-            <ellipse cx="13" cy="21" rx="5" ry="2" fill="rgba(0,0,0,0.18)" filter="url(#tack-shadow)" />
-            <rect x="10" y="19" width="2.2" height="10" rx="1.1" fill="url(#tack-stem)" />
-            <circle cx="11" cy="10" r="9.5" fill="url(#tack-head)" />
-            <circle cx="11" cy="10" r="9.5" fill="none" stroke="hsl(340, 72%, 36%)" strokeWidth="0.7" opacity="0.35" />
-            <ellipse cx="7.5" cy="6.5" rx="2.2" ry="1.4" fill="white" opacity="0.45" transform="rotate(-30 7.5 6.5)" />
-          </svg>
+          <img
+            src="/images/star.svg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-contain select-none pointer-events-none"
+          />
         </motion.div>
 
         {/* Word */}
         <h3
-          className="text-[1.18rem] font-bold tracking-tight text-[#18181a] drop-shadow-sm"
+          className="text-[1.18rem] font-normal tracking-tight text-[#18181a] drop-shadow-sm"
           style={{ fontFamily: "var(--font-sans)" }}
         >
           Management Engineering
