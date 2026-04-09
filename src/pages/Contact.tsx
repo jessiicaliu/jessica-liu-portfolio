@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Linkedin, Mail, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Github, Heart, Linkedin, Mail, type LucideIcon } from "lucide-react";
 
 type SocialLink = {
   icon: LucideIcon;
@@ -129,17 +129,12 @@ const Contact = () => {
       </div>
 
       {/* Footer */}
-      <motion.div
-        className="mt-16 pb-8 flex justify-center"
-        initial={{ opacity: 0, y: 8 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.45, duration: 0.45 }}
-      >
-        <p className="inline-flex items-center gap-2 rounded-full border border-primary/12 bg-pink-soft/20 px-4 py-2 text-xs font-sans text-primary/60">
-          <span>Made With ♡ • Copyright {currentYear} Jessica Liu. All Rights Reserved.</span>
+      <div className="mt-16 pb-8 max-w-5xl mx-auto border-t border-primary/10 pt-6 flex items-center justify-between">
+        <p className="inline-flex items-center gap-1.5 text-xs font-sans text-foreground/35">
+          made with <Heart className="w-3 h-3 text-primary/50 fill-primary/30" /> by jessica liu
         </p>
-      </motion.div>
+        <p className="text-xs font-sans text-foreground/35">© {currentYear}</p>
+      </div>
     </div>
   );
 };
