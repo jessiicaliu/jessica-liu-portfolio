@@ -131,12 +131,12 @@ const Contact = () => {
               transition={{ delay: 0.2 + i * 0.08, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -3 }}
             >
-              <s.icon className={`w-3.5 h-3.5 text-primary/40 transition-colors duration-300 ${s.color} shrink-0`} />
+              <s.icon className={`w-6 h-6 text-primary/80 transition-colors duration-300 ${s.color} shrink-0 drop-shadow-[0_1px_2px_rgba(219,39,119,0.08)]`} />
               <div className="flex flex-col gap-0.5">
-                <span className="font-sans text-sm text-foreground/55 group-hover:text-foreground/85 transition-colors duration-300 font-medium leading-none">
+                <span className="font-sans text-base text-foreground/85 group-hover:text-primary transition-colors duration-300 font-semibold leading-none">
                   {s.label}
                 </span>
-                <span className="font-sans text-[11px] text-foreground/30 group-hover:text-foreground/50 transition-colors duration-300 leading-none">
+                <span className="font-sans text-[13.5px] text-foreground/60 group-hover:text-primary/80 transition-colors duration-300 leading-none">
                   {s.handle}
                 </span>
               </div>
@@ -153,7 +153,7 @@ const Contact = () => {
                     }
                   </button>
                 )}
-                <ArrowUpRight className="w-3 h-3 text-primary/20 group-hover:text-primary/50 transition-all duration-300 group-hover:translate-x-px group-hover:-translate-y-px" />
+                <ArrowUpRight className="w-4 h-4 text-primary/50 group-hover:text-primary transition-all duration-300 group-hover:translate-x-px group-hover:-translate-y-px" />
               </div>
             </motion.a>
           ))}
