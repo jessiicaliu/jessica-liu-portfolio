@@ -119,7 +119,7 @@ const Navbar = () => {
                   className={`relative px-3.5 py-1.5 rounded-full transition-colors duration-300 font-medium flex items-center gap-2 ${
                     activeId === link.id
                       ? "text-primary"
-                      : "text-foreground/45 hover:text-primary hover:bg-pink-soft/40"
+                      : "text-primary/40 hover:text-primary hover:bg-pink-soft/40"
                   }`}
                 >
                   {activeId === link.id && (
@@ -131,15 +131,15 @@ const Navbar = () => {
                   )}
                   <link.icon
                     className="w-[17px] h-[17px] md:w-[18px] md:h-[18px] transition-colors duration-300"
-                    style={{ color: activeId === link.id ? "hsl(340 72% 62%)" : "hsl(340 10% 60%)" }}
+                    style={{ color: activeId === link.id ? "hsl(340 72% 62%)" : "hsl(340 72% 62% / 0.4)" }}
                     strokeWidth={activeId === link.id ? 2.2 : 1.7}
                   />
                   <span className="relative z-10">{link.label}</span>
                 </a>
                 {i < links.length - 1 && (
                   <motion.span
-                    className="text-[11px] text-[#ff2f9b] mx-1 select-none animate-sparkle"
-                    style={{ animationDelay: `${i * 0.4}s`, display: "inline-block" }}
+                    className="text-[11px] mx-1 select-none animate-sparkle"
+                    style={{ color: "hsl(340 72% 62%)", animationDelay: `${i * 0.4}s`, display: "inline-block" }}
                     whileHover={{ scale: 1.6, rotate: 20 }}
                     transition={{ type: "spring", stiffness: 500, damping: 14 }}
                   >
@@ -193,14 +193,14 @@ const Navbar = () => {
                 >
                   <Icon
                     className="w-[18px] h-[18px] transition-colors duration-300"
-                    style={{ color: isActive ? "hsl(340 72% 62%)" : "hsl(340 10% 60%)" }}
+                    style={{ color: isActive ? "hsl(340 72% 62%)" : "hsl(340 72% 62% / 0.4)" }}
                     strokeWidth={isActive ? 2.2 : 1.7}
                   />
                 </motion.div>
 
                 <span
                   className="relative z-10 font-sans text-[10px] font-semibold tracking-wide transition-colors duration-300 leading-none"
-                  style={{ color: isActive ? "hsl(340 72% 62%)" : "hsl(340 10% 58%)" }}
+                  style={{ color: isActive ? "hsl(340 72% 62%)" : "hsl(340 72% 62% / 0.4)" }}
                 >
                   {link.id === "about" ? "About" : link.label}
                 </span>
