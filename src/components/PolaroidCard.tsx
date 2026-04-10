@@ -23,15 +23,10 @@ export default function PolaroidCard() {
       />
       {/* Star sticker */}
       <motion.div
-        className="absolute -top-5 -right-5 z-30 w-16 h-16"
+        className="absolute -top-5 -right-5 z-30 w-16 h-16 pointer-events-none"
         initial={{ scale: 0, rotate: 30 }}
         animate={{ scale: 1, rotate: 14 }}
-        transition={{ type: "spring", stiffness: 320, damping: 12, delay: 0.95 }}
-        whileHover={{
-          rotate: 22,
-          scale: 1.14,
-          transition: { type: "spring", stiffness: 300, damping: 12 },
-        }}
+        transition={{ type: "spring", stiffness: 280, damping: 18, delay: 0.95 }}
       >
         <img
           src="/images/star.svg"
@@ -59,15 +54,14 @@ export default function PolaroidCard() {
             className="absolute inset-0 w-full h-full"
             style={{ backfaceVisibility: "hidden" }}
           >
-            <img
+            <motion.img
               src="/images/headshot.webp"
               alt="Jessica Liu headshot"
               className="h-full w-full object-cover"
-              style={{
-                objectPosition: "center 72%",
-                transform: "scale(1.08)",
-                filter: "brightness(1.05) saturate(0.93) contrast(0.91)",
-              }}
+              style={{ objectPosition: "center 72%" }}
+              initial={{ scale: 1.08, filter: "brightness(1.05) saturate(0.93) contrast(0.91)" }}
+              whileHover={{ scale: 1.10, filter: "brightness(1.07) saturate(0.93) contrast(0.91)" }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             />
 
           </div>

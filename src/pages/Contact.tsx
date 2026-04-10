@@ -62,10 +62,10 @@ const Contact = () => {
         {/* Eyebrow */}
         <motion.p
           className="text-[11px] font-sans uppercase tracking-[0.3em] text-primary/45 mb-3 font-semibold"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
         >
           ✦ Let's Connect
         </motion.p>
@@ -73,12 +73,12 @@ const Contact = () => {
         {/* Heading + airplane */}
         <motion.div
           className="flex items-center gap-3 mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.05 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
         >
-          <h1 className="font-display text-4xl md:text-5xl text-primary">Say Hi.</h1>
+          <h1 className="font-display text-4xl md:text-5xl text-primary">Say Hi!</h1>
           <motion.div
             className="relative flex items-center justify-center w-10 h-10"
             animate={{ y: [0, -3, 0], x: [0, 1, 0] }}
@@ -108,12 +108,12 @@ const Contact = () => {
         {/* Tagline */}
         <motion.p
           className="font-sans text-sm text-foreground/45 mb-6"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.12 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
         >
-          Always open to new projects, opportunities, and good conversations.
+          Always open to new projects, opportunities, or just a chat.
         </motion.p>
 
         {/* Social links */}
@@ -124,15 +124,15 @@ const Contact = () => {
               href={s.href}
               target={s.href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-primary/12 bg-pink-soft/10 hover:bg-pink-soft/25 hover:border-primary/25 transition-all duration-300"
-              initial={{ opacity: 0, x: -16, filter: "blur(4px)" }}
-              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-primary/12 bg-pink-soft/10 hover:bg-pink-soft/25 hover:border-primary/25 transition-all duration-300 w-full sm:w-auto"
+              initial={{ opacity: 0, y: 6 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 + i * 0.08, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 0.15 + i * 0.07, duration: 0.35 }}
               whileHover={{ y: -3 }}
             >
               <s.icon className={`w-6 h-6 text-primary/80 transition-colors duration-300 ${s.color} shrink-0 drop-shadow-[0_1px_2px_rgba(219,39,119,0.08)]`} />
-              <div className="flex flex-col gap-0.5">
+              <div className="flex flex-col gap-0.5 flex-1">
                 <span className="font-sans text-base text-foreground/85 group-hover:text-primary transition-colors duration-300 font-semibold leading-none">
                   {s.label}
                 </span>

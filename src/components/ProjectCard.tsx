@@ -21,11 +21,16 @@ const ProjectCard = ({
   onOpen: () => void;
 }) => (
   <motion.div
-    className="group relative cursor-pointer rounded-xl bg-white/80 border border-primary/10 p-4 md:p-5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col gap-2 min-h-[160px]"
-    initial={{ opacity: 0, y: 14 }}
+    className="group relative cursor-pointer rounded-[16px] p-4 md:p-5 transition-all duration-300 flex flex-col gap-2 min-h-[160px] border border-primary/10 ring-1 ring-inset ring-pink-400/40"
+    style={{
+      background: "linear-gradient(135deg, rgba(255,255,255,0.55) 60%, hsl(340,72%,98%) 100%)",
+      boxShadow: "0 2px 12px -4px hsl(340 50% 80% / 0.12)",
+      backdropFilter: "blur(8px)",
+    }}
+    initial={{ opacity: 0, y: 6 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-40px" }}
-    transition={{ duration: 0.45, delay: index * 0.08 }}
+    transition={{ duration: 0.35, delay: index * 0.07 }}
     onClick={onOpen}
     whileHover={{ y: -3, scale: 1.01 }}
   >

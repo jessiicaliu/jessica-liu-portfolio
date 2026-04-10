@@ -45,11 +45,10 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
           />
           {/* Star sticker */}
           <motion.div
-            className="absolute -top-5 -right-5 z-30 w-16 h-16"
+            className="absolute -top-5 -right-5 z-30 w-16 h-16 pointer-events-none"
             initial={{ scale: 0, rotate: 30 }}
             animate={{ scale: 1, rotate: 14 }}
-            transition={{ type: "spring", stiffness: 320, damping: 12, delay: 0.95 }}
-            whileHover={{ rotate: 22, scale: 1.14, transition: { type: "spring", stiffness: 300, damping: 12 } }}
+            transition={{ type: "spring", stiffness: 280, damping: 18, delay: 0.95 }}
           >
             <img src="/images/star.svg" alt="" aria-hidden="true" className="w-full h-full object-contain select-none pointer-events-none" />
           </motion.div>
@@ -102,10 +101,10 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
           />
           {/* Star sticker */}
           <motion.div
-            className="absolute -top-4 -right-3 z-30 w-11 h-11"
+            className="absolute -top-4 -right-3 z-30 w-11 h-11 pointer-events-none"
             initial={{ scale: 0, rotate: 30 }}
             animate={{ scale: 1, rotate: 14 }}
-            transition={{ type: "spring", stiffness: 320, damping: 12, delay: 0.95 }}
+            transition={{ type: "spring", stiffness: 280, damping: 18, delay: 0.95 }}
           >
             <img src="/images/star.svg" alt="" aria-hidden="true" className="w-full h-full object-contain select-none pointer-events-none" />
           </motion.div>

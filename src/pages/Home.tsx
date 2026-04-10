@@ -1,19 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import DictionaryEntry from "@/components/DictionaryEntry";
 import HeroSection from "@/components/HeroSection";
 import ProfileDescription from "@/components/ProfileDescription";
 import ContactLinks from "@/components/ContactLinks";
-import React, { useState } from "react";
 import PolaroidCard from "@/components/PolaroidCard";
 
-const SPARKLE_TINT = "rgb(255,208,215)";
-const SPARKLE_OPACITY = 0.62;
-const WASHI_TAPE_BACKGROUND = "linear-gradient(135deg, rgba(255,208,215,0.68) 0%, rgba(244,188,198,0.54) 100%)";
-const WASHI_TAPE_SHADOW = "0 1px 4px rgba(0,0,0,0.06), inset 0 0 0 1px rgba(210,145,158,0.18)";
-
 const Home = () => {
-  const [flipped, setFlipped] = useState(false);
   return (
     <div className="flex flex-col justify-start pt-12 md:pt-32 lg:pt-36 pb-24 px-8 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto w-full">
@@ -27,8 +19,8 @@ const Home = () => {
 
             <motion.div
               className="mt-6"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.35, duration: 0.6 }}
             >
               <ProfileDescription />
@@ -36,8 +28,8 @@ const Home = () => {
 
             <motion.div
               className="mt-7"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               <ContactLinks />
@@ -45,8 +37,8 @@ const Home = () => {
 
             <motion.div
               className="mt-10"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.55 }}
             >
               <DictionaryEntry />
@@ -62,13 +54,8 @@ const Home = () => {
           >
             <motion.div
               className="relative w-full max-w-[330px] mt-20"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2, repeatDelay: 2 }}
-              whileHover={{
-                y: -8,
-                scale: 1.02,
-                transition: { type: "spring", stiffness: 200, damping: 20 },
-              }}
+              animate={{ y: [0, -7, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }}
             >
               <PolaroidCard />
             </motion.div>
@@ -89,8 +76,8 @@ const Home = () => {
 
           <motion.div
             className="mt-8"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.35, duration: 0.6 }}
           >
             <ProfileDescription />
@@ -98,8 +85,8 @@ const Home = () => {
 
           <motion.div
             className="mt-9"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.45, duration: 0.55 }}
           >
             <DictionaryEntry />
@@ -107,8 +94,8 @@ const Home = () => {
 
           <motion.div
             className="mt-7"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
             <ContactLinks />

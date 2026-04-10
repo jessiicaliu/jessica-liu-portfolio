@@ -7,25 +7,18 @@ const Stack = () => {
       <div className="max-w-5xl mx-auto">
         <motion.div
           className="mb-12"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4 }}
         >
           <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-primary/45 mb-3 font-semibold">
             ✦ Tools & Technologies
           </p>
-          <h1 className="font-display text-4xl md:text-5xl text-gradient-rose">Stack</h1>
+          <h1 className="font-display text-4xl md:text-5xl text-gradient-rose font-medium">Stack</h1>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-        >
-          <TechStack />
-        </motion.div>
+        <TechStack />
       </div>
     </div>
   );

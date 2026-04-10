@@ -126,32 +126,16 @@ const stack: { label: string; items: TechItem[] }[] = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.05 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 5 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
 const TechStack = () => {
   return (
     <div className="mt-4 space-y-10">
       {stack.map((category, catIdx) => (
         <motion.div
           key={category.label}
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.4, delay: catIdx * 0.06, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, delay: catIdx * 0.05 }}
         >
           <div className="flex items-center gap-3 mb-5">
             <span className="font-sans text-[11px] uppercase tracking-[0.28em] font-semibold text-foreground/50">
@@ -160,17 +144,10 @@ const TechStack = () => {
             <div className="h-px flex-1 bg-gradient-to-r from-primary/15 to-transparent" />
           </div>
 
-          <motion.div
-            className="flex flex-wrap gap-3"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-20px" }}
-          >
+          <div className="flex flex-wrap gap-3">
             {category.items.map((tool) => (
               <motion.div
                 key={tool.name}
-                variants={itemVariants}
                 whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 22 }}
                 className="group flex flex-col items-center gap-2 cursor-default w-[68px]"
@@ -191,7 +168,7 @@ const TechStack = () => {
                 </span>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
       ))}
     </div>

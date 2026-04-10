@@ -9,10 +9,10 @@ import Stack from "./Stack";
 const SectionDivider = () => (
   <motion.div
     className="relative flex items-center justify-center h-16 px-8 md:px-16 lg:px-24"
-    initial={{ opacity: 0, scaleX: 0.85 }}
-    whileInView={{ opacity: 1, scaleX: 1 }}
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-20px" }}
-    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+    transition={{ duration: 0.5 }}
   >
     <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/30 to-primary/40" />
     <motion.span
