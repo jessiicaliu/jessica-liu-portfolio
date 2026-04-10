@@ -6,6 +6,7 @@ type ExperienceEntry = {
   role: string;
   period: string;
   bullets: string[];
+  techTerms?: string[];
 };
 
 const experiences: ExperienceEntry[] = [
@@ -13,18 +14,20 @@ const experiences: ExperienceEntry[] = [
     company: "Ontario Ministry of Agriculture, Food and Agribusiness (OMAFA)",
     role: "Software Developer",
     period: "Jan 2026 - Apr 2026",
+    techTerms: ["RAG", "Azure OpenAI", "FastAPI", "React", "Tailwind", "Crawl4AI", "Python"],
     bullets: [
-      "[blank]", 
-      "[blank]", 
-      "[blank]", 
-      "[blank]", 
-      "[blank]"
+      "Architected a production-grade multimodal RAG chatbot from 0 to 1 that queries 300+ agricultural publications and returns citation-backed answers with exact page references, powered by a custom semantic retrieval pipeline using Azure OpenAI, embedding-based indexing, and vector similarity search", 
+      "Owned the full system stack from a PDF ingestion pipeline and FastAPI backend to a React and Tailwind chat interface with real-time streaming and image upload support; met with widespread acclaim and on track to launch as an official Ontario government resource", 
+      "Built an AI-powered web scraping pipeline in Python using Crawl4AI that processes 80+ sites, applies prompt-engineered Azure OpenAI calls to rank and filter sources, extracts and parses content from HTML and PDFs, and surfaces results through a searchable filterable viewer with an embedded chatbot and automated Excel report generation; eliminated manual research workflows and actively used internally", 
+      "Developed a Python automation tool that extracts and validates data from government program application PDFs, applying custom parsing, cross-field validation logic, and automated Excel report generation; cut months of manual processing to seconds and adopted as a permanent internal tool", 
+      "Shipped a production-ready bilingual web application featuring complex hydraulic calculation logic, dynamic multi-step UI state management, client-side PDF generation, and full English and French support for external public use"
     ],
   },
   {
     company: "University of Waterloo - Faculty of Engineering",
     role: "Data Analyst",
     period: "May 2025 - Aug 2025",
+    techTerms: ["Power BI", "Google Analytics", "Looker Studio", "Jira"],
     bullets: [
       "Developed web pages for the Faculty of Engineering website, serving content for 5,000+ monthly visitors",
       "Built a Power BI dashboard integrating attendance and application data to analyze recruitment trends",
@@ -36,6 +39,7 @@ const experiences: ExperienceEntry[] = [
     company: "Project Tech Careers",
     role: "Full Stack Developer",
     period: "Apr 2025 - Aug 2025",
+    techTerms: ["React", "Stripe", "AWS Amplify", "AWS Lambda", "DynamoDB"],
     bullets: [
       "Built an end-to-end registration and payment system using React, Stripe, and AWS Amplify, handling secure transactions for 70+ participants",
       "Implemented backend systems with AWS Amplify, AWS Lambda, and DynamoDB to manage role-based access across admin and participant roles",
@@ -45,12 +49,29 @@ const experiences: ExperienceEntry[] = [
     company: "TechNova Hackathon",
     role: "UI/UX Designer",
     period: "Mar 2025 - Aug 2025",
+    techTerms: ["Figma"],
     bullets: [
       "Designed high-fidelity Figma prototypes and UI components for the hackathon website with consistent branding and layouts",
       "Collaborated with developers to translate designs into responsive frontend components and production UI features",
     ],
   },
 ];
+
+const highlightTerms = (text: string, terms: string[]) => {
+  if (!terms.length) return text;
+  const escaped = terms.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const regex = new RegExp(`(${escaped.join("|")})`, "g");
+  const parts = text.split(regex);
+  return parts.map((part, i) =>
+    terms.includes(part) ? (
+      <span key={i} className="text-primary/80 font-semibold">
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+};
 
 const CardContent = ({ exp }: { exp: ExperienceEntry }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -98,13 +119,13 @@ const CardContent = ({ exp }: { exp: ExperienceEntry }) => {
             <h3 className="font-display text-[1.2rem] md:text-[1.35rem] text-foreground/90 leading-snug">
               {exp.role}
             </h3>
-            <span className="shrink-0 inline-block font-sans text-[10px] px-2 py-0.5 rounded-full mt-1 bg-primary/5 text-primary/60 border border-primary/8 font-medium">
+            <span className="shrink-0 inline-block font-sans text-[10px] px-2 py-0.5 rounded-full mt-1 bg-primary/5 text-primary/60 border border-primary/8 font-bold">
               {exp.period}
             </span>
           </div>
 
           {/* Company */}
-          <p className="font-sans text-[12px] text-primary/55 font-medium leading-snug mb-4">
+          <p className="font-sans text-[12px] text-primary/80 font-semibold leading-snug mb-4">
             {exp.company}
           </p>
 
@@ -113,16 +134,16 @@ const CardContent = ({ exp }: { exp: ExperienceEntry }) => {
             {exp.bullets.map((bullet, j) => (
               <li
                 key={j}
-                className="font-sans text-[12.5px] leading-[1.6] text-foreground/50 flex items-start gap-2.5 group/b"
+                className="font-sans text-[12.5px] leading-[1.6] text-foreground/60 flex items-start gap-2.5 group/b"
               >
                 <span
                   className="mt-[7px] shrink-0 w-[4px] h-[4px] rounded-full group-hover/b:scale-150 transition-all duration-300"
                   style={{
-                    background: "linear-gradient(135deg, hsl(340 72% 62% / 0.4), hsl(320 50% 70% / 0.3))",
+                    background: "linear-gradient(135deg, hsl(340 72% 62% / 0.75), hsl(320 50% 70% / 0.65))",
                   }}
                 />
-                <span className="group-hover/b:text-foreground/70 transition-colors duration-300">
-                  {bullet}
+                <span className="group-hover/b:text-foreground/75 transition-colors duration-300">
+                  {highlightTerms(bullet, exp.techTerms ?? [])}
                 </span>
               </li>
             ))}
