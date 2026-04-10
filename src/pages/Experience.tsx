@@ -13,17 +13,23 @@ const experiences: ExperienceEntry[] = [
     company: "Ontario Ministry of Agriculture, Food and Agribusiness (OMAFA)",
     role: "Software Developer",
     period: "Jan 2026 - Apr 2026",
-    bullets: ["[blank]", "[blank]", "[blank]"],
+    bullets: [
+      "[blank]", 
+      "[blank]", 
+      "[blank]", 
+      "[blank]", 
+      "[blank]"
+    ],
   },
   {
     company: "University of Waterloo - Faculty of Engineering",
     role: "Data Analyst",
     period: "May 2025 - Aug 2025",
     bullets: [
-      "developed 20+ WCMS pages on the UW Engineering website, reaching 5000+ visitors monthly",
-      "built a Power BI dashboard linking grad fair attendance to application trends for recruitment insights.",
-      "resolved 50+ issues via Jira and trained colleagues on WCMS content updates.",
-      "tracked site performance with Google Analytics and Looker Studio, delivering monthly traffic reports.",
+      "Developed web pages for the Faculty of Engineering website, serving content for 5,000+ monthly visitors",
+      "Built a Power BI dashboard integrating attendance and application data to analyze recruitment trends",
+      "Monitored web and user engagement metrics using Google Analytics and Looker Studio, delivering monthly performance insights",
+      "Resolved Jira tickets related to website issues and platform maintenance"
     ],
   },
   {
@@ -31,8 +37,8 @@ const experiences: ExperienceEntry[] = [
     role: "Full Stack Developer",
     period: "Apr 2025 - Aug 2025",
     bullets: [
-      "built a full registration and payment flow with React, Stripe, and AWS Amplify, handling secure transactions for 70+ participants.",
-      "implemented role-based access control on the backend, separating admin and participant permissions across the platform.",
+      "Built an end-to-end registration and payment system using React, Stripe, and AWS Amplify, handling secure transactions for 70+ participants",
+      "Implemented backend systems with AWS Amplify, AWS Lambda, and DynamoDB to manage role-based access across admin and participant roles",
     ],
   },
   {
@@ -40,8 +46,8 @@ const experiences: ExperienceEntry[] = [
     role: "UI/UX Designer",
     period: "Mar 2025 - Aug 2025",
     bullets: [
-      "designed Figma prototypes and branded assets for the hackathon website, reaching 500+ prospective hackers.",
-      "worked with developers to translate designs into functional website features.",
+      "Designed high-fidelity Figma prototypes and UI components for the hackathon website with consistent branding and layouts",
+      "Collaborated with developers to translate designs into responsive frontend components and production UI features",
     ],
   },
 ];
