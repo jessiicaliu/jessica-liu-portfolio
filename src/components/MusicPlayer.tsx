@@ -80,8 +80,8 @@ const MusicPlayer = () => {
 
   const sliderMax = useMemo(() => (duration > 0 ? duration : 1), [duration]);
   const panelAnimation = isOpen
-    ? { opacity: 1, y: 0, scale: 1, pointerEvents: "auto" as const }
-    : { opacity: 0, y: 14, scale: 0.98, pointerEvents: "none" as const };
+    ? { opacity: 1, y: 0, scale: 1 }
+    : { opacity: 0, y: 14, scale: 0.98 };
 
   return (
     <div className="fixed z-50 flex items-end gap-2 right-4 bottom-auto top-4 md:top-auto md:bottom-6">
@@ -91,13 +91,13 @@ const MusicPlayer = () => {
         animate={panelAnimation}
         transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         className="relative w-[min(80vw,360px)] rounded-3xl border border-[hsl(340,65%,86%)] bg-[linear-gradient(165deg,rgba(255,248,252,0.98)_0%,rgba(255,236,246,0.96)_100%)] px-4 pb-4 pt-3 backdrop-blur-md"
-        style={{ boxShadow: "0 18px 42px -22px rgba(228,88,135,0.45)" }}
+        style={{ boxShadow: "0 18px 42px -22px rgba(228,88,135,0.45)", pointerEvents: isOpen ? "auto" : "none" }}
       >
         <button
           type="button"
           onClick={() => setIsOpen(false)}
           aria-label="Hide music player"
-          className="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full border border-[hsl(340,65%,86%)] bg-[hsl(340,72%,97%)] opacity-55 transition-all duration-200 hover:scale-[1.06] hover:opacity-90"
+          className="absolute right-3 top-3 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full border border-[hsl(340,65%,86%)] bg-[hsl(340,72%,97%)] opacity-55 transition-all duration-200 hover:scale-[1.06] hover:opacity-90"
           style={{ color: "hsl(340,72%,62%)" }}
         >
           <X className="h-3.5 w-3.5" />
