@@ -14,13 +14,13 @@ const experiences: ExperienceEntry[] = [
     company: "Ontario Ministry of Agriculture, Food and Agribusiness (OMAFA)",
     role: "Software Developer",
     period: "Jan 2026 - Apr 2026",
-    techTerms: ["RAG", "Azure OpenAI", "FastAPI", "React", "Tailwind", "Crawl4AI", "Python"],
+    techTerms: ["RAG", "Azure OpenAI", "FastAPI", "React", "Tailwind", "Crawl4AI", "Python", "JavaScript"],
     bullets: [
       "Architected a production-grade multimodal RAG chatbot from 0 to 1 that queries 300+ agricultural publications and returns citation-backed answers with exact page references, powered by a custom semantic retrieval pipeline using Azure OpenAI, embedding-based indexing, and vector similarity search", 
       "Owned the full system stack from a PDF ingestion pipeline and FastAPI backend to a React and Tailwind chat interface with real-time streaming and image upload support; met with widespread acclaim and on track to launch as an official Ontario government resource", 
-      "Built an AI-powered web scraping pipeline in Python using Crawl4AI that processes 80+ sites, applies prompt-engineered Azure OpenAI calls to rank and filter sources, extracts and parses content from HTML and PDFs, and surfaces results through a searchable filterable viewer with an embedded chatbot and automated Excel report generation; eliminated manual research workflows and actively used internally", 
+      "Built an AI-powered Python system using Crawl4AI to monitor 80+ stakeholder websites; leveraged Azure OpenAI to identify relevant subpages and extract required information, presenting results in a searchable viewer with an embedded chatbot; replaced manual research workflows and actively used internally", 
       "Developed a Python automation tool that extracts and validates data from government program application PDFs, applying custom parsing, cross-field validation logic, and automated Excel report generation; cut months of manual processing to seconds and adopted as a permanent internal tool", 
-      "Shipped a production-ready bilingual web application featuring complex hydraulic calculation logic, dynamic multi-step UI state management, client-side PDF generation, and full English and French support for external public use"
+      "Shipped a JavaScript web application for external use featuring hydraulic calculations for water system design, multi-step UI state management, client-side PDF generation, and full English/French localization support"
     ],
   },
   {
