@@ -6,6 +6,8 @@ const WASHI_TAPE_SHADOW = "0 1px 4px rgba(0,0,0,0.06), inset 0 0 0 1px rgba(210,
 
 export default function PolaroidCard() {
   const [flipped, setFlipped] = useState(false);
+  // Detect if device supports hover (desktop)
+  const canHover = typeof window !== "undefined" && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   return (
     <motion.div
       className="relative rounded-[0.85rem] bg-[#fefcf9] p-[14px] pb-11"
@@ -60,7 +62,7 @@ export default function PolaroidCard() {
               className="h-full w-full object-cover"
               style={{ objectPosition: "center 72%" }}
               initial={{ scale: 1.08, filter: "brightness(1.05) saturate(0.93) contrast(0.91)" }}
-              whileHover={{ scale: 1.10, filter: "brightness(1.07) saturate(0.93) contrast(0.91)" }}
+              {...(canHover ? { whileHover: { scale: 1.10, filter: "brightness(1.07) saturate(0.93) contrast(0.91)" } } : {})}
               transition={{ duration: 0.4, ease: "easeOut" }}
             />
 
