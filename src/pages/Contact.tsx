@@ -22,10 +22,10 @@ const socials: SocialLink[] = [
   {
     icon: Mail,
     label: "Email",
-    handle: "jessica.liu3@uwaterloo.ca",
-    href: "mailto:jessica.liu3@uwaterloo.ca",
+    handle: "jessiicaliu@outlook.com",
+    href: "mailto:jessiicaliu@outlook.com",
     color: "group-hover:text-primary",
-    copyValue: "jessica.liu3@uwaterloo.ca",
+    copyValue: "jessiicaliu@outlook.com",
   },
   {
     icon: Github,
