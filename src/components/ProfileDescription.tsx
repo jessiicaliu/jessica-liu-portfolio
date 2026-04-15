@@ -19,7 +19,7 @@ const defaultText = (
 );
 
 const ProfileDescription: React.FC<ProfileDescriptionProps> = ({ children }) => (
-  <p className="font-sans text-[15px] md:text-[15px] text-foreground/55 leading-relaxed max-w-xl">
+  <p className="font-sans text-[13.5px] md:text-[14px] text-foreground/55 leading-relaxed max-w-xl">
     {children || defaultText}
   </p>
 );

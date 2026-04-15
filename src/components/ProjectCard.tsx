@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { Link } from "lucide-react";
 
 export type Project = {
   name: string;
@@ -37,7 +37,7 @@ const ProjectCard = ({
   >
     <div className="flex items-center justify-between mb-1">
       <div>
-        <h3 className="font-display text-lg md:text-xl text-foreground/90 group-hover:text-primary transition-colors duration-300 mb-3">
+        <h3 className="font-display text-base md:text-lg text-foreground/90 group-hover:text-primary transition-colors duration-300 mb-2">
           {project.name}
         </h3>
         <p className="font-sans text-[12px] text-primary/55 font-medium leading-snug mb-1.5">
@@ -48,11 +48,11 @@ const ProjectCard = ({
         className="flex items-center gap-1 px-2 py-1 rounded-full bg-primary/5 border border-primary/10 group-hover:bg-primary/10 group-hover:border-primary/20 transition-all duration-300"
         whileHover={{ scale: 1.07 }}
       >
-        <ArrowUpRight className="w-3 h-3 text-primary/40 group-hover:text-primary/80 transition-all duration-300" />
+        <Link className="w-3 h-3 text-primary/40 group-hover:text-primary/80 transition-all duration-300" />
       </motion.div>
     </div>
 
-    <p className="font-sans text-xs md:text-sm text-foreground/70 leading-snug mb-1">
+    <p className="font-sans text-[11px] md:text-xs text-foreground/70 leading-snug mb-1">
       {project.description}
     </p>
 

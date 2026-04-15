@@ -8,7 +8,7 @@ import Stack from "./Stack";
 
 const SectionDivider = () => (
   <motion.div
-    className="relative flex items-center justify-center h-16 px-8 md:px-16 lg:px-24"
+    className="relative flex items-center justify-center h-6 px-8 md:px-16 lg:px-24"
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-20px" }}

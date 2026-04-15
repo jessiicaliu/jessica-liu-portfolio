@@ -48,7 +48,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="px-6 md:px-16 lg:px-24 pt-20 pb-12">
+    <div className="px-6 md:px-16 lg:px-24 pt-10 pb-8">
       <div className="max-w-5xl mx-auto">
 
         {/* Soft radial bloom — left-anchored to match heading */}
@@ -78,7 +78,7 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.05 }}
         >
-          <h1 className="font-display text-4xl md:text-5xl text-primary">Say Hi!</h1>
+          <h1 className="font-display text-3xl md:text-4xl text-primary">Say Hi!</h1>
           <motion.div
             className="relative flex items-center justify-center w-10 h-10"
             animate={{ y: [0, -3, 0], x: [0, 1, 0] }}
@@ -161,7 +161,7 @@ const Contact = () => {
       </div>
 
       {/* Footer */}
-      <div className="mt-16 pb-8 max-w-5xl mx-auto border-t border-primary/10 pt-6 flex items-center justify-between">
+      <div className="mt-10 pb-8 max-w-5xl mx-auto border-t border-primary/10 pt-5 flex items-center justify-between">
         <p className="inline-flex items-center gap-1.5 text-xs font-sans text-foreground/35">
           made with <Heart className="w-3 h-3 text-primary/50 fill-primary/30" /> by jessica liu
         </p>

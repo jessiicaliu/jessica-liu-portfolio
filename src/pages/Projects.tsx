@@ -48,10 +48,10 @@ const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <div className="px-6 md:px-16 lg:px-24 pt-20 pb-24">
+    <div className="px-6 md:px-16 lg:px-24 pt-10 pb-10">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          className="mb-14"
+          className="mb-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -60,7 +60,7 @@ const Projects = () => {
           <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-primary/45 mb-3 font-semibold">
             ✦ Selected Work
           </p>
-          <h1 className="inline-block font-display text-4xl md:text-5xl leading-[1.32] pt-1 pb-2 text-primary font-medium">
+          <h1 className="inline-block font-display text-3xl md:text-4xl leading-[1.32] pt-1 pb-2 text-primary font-medium">
             Projects
           </h1>
         </motion.div>

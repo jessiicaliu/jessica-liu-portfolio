@@ -19,7 +19,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name = "Jessica Liu" }) => {
       </motion.p>
       <div className="relative">
         <motion.h1
-          className="font-display text-6xl md:text-7xl lg:text-[6rem] leading-[0.9] tracking-[-0.01em] text-foreground"
+          className="font-display text-4xl md:text-5xl lg:text-[4.5rem] leading-[0.9] tracking-[-0.01em] text-foreground"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
@@ -72,7 +72,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name = "Jessica Liu" }) => {
         </motion.h1>
       </div>
       <motion.p
-        className="mt-4 font-sans text-lg md:text-xl text-foreground/60"
+        className="mt-3 font-sans text-sm md:text-base text-foreground/60"
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}

@@ -7,7 +7,7 @@ import PolaroidCard from "@/components/PolaroidCard";
 
 const Home = () => {
   return (
-    <div className="flex flex-col justify-start pt-12 md:pt-32 lg:pt-36 pb-24 px-8 md:px-16 lg:px-24">
+    <div className="flex flex-col justify-start pt-8 md:pt-24 lg:pt-28 pb-10 px-8 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto w-full">
 
         {/* ── Desktop layout ── */}
@@ -33,15 +33,6 @@ const Home = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               <ContactLinks />
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-sans text-[13px] font-medium px-3.5 py-1.5 rounded-full border border-primary/20 text-primary/60 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
-              >
-                Resume
-                <span className="text-[11px] opacity-70">↓</span>
-              </a>
             </motion.div>
 
             <motion.div
@@ -108,15 +99,6 @@ const Home = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
           >
             <ContactLinks />
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-sans text-[13px] font-medium px-3.5 py-1.5 rounded-full border border-primary/20 text-primary/60 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
-            >
-              Resume
-              <span className="text-[11px] opacity-70">↓</span>
-            </a>
           </motion.div>
         </div>
 

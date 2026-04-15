@@ -128,7 +128,7 @@ const stack: { label: string; items: TechItem[] }[] = [
 
 const TechStack = () => {
   return (
-    <div className="mt-4 space-y-10">
+    <div className="mt-4 space-y-7">
       {stack.map((category, catIdx) => (
         <motion.div
           key={category.label}
@@ -137,14 +137,14 @@ const TechStack = () => {
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.4, delay: catIdx * 0.05 }}
         >
-          <div className="flex items-center gap-3 mb-5">
+          <div className="flex items-center gap-3 mb-3">
             <span className="font-sans text-[11px] uppercase tracking-[0.28em] font-semibold text-foreground/50">
               {category.label}
             </span>
             <div className="h-px flex-1 bg-gradient-to-r from-primary/15 to-transparent" />
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2">
             {category.items.map((tool) => (
               <motion.div
                 key={tool.name}
