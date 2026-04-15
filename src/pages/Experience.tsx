@@ -11,38 +11,32 @@ type ExperienceEntry = {
 
 const experiences: ExperienceEntry[] = [
   {
-    company: "Ontario Ministry of Agriculture, Food and Agribusiness (OMAFA)",
-    role: "Software Developer",
+    company: "Ontario Ministry of Agriculture",
+    role: "Software Engineer Intern (AI)",
     period: "Jan 2026 - Apr 2026",
-    techTerms: ["RAG", "Azure OpenAI", "FastAPI", "React", "Tailwind", "Crawl4AI", "Python", "JavaScript"],
+    techTerms: ["RAG", "YOLO", "Python", "FastAPI", "React", "Azure", "0 to 1", "agentic ML"],
     bullets: [
-      "Architected a production-grade multimodal RAG chatbot from 0 to 1 that queries 300+ agricultural publications and returns citation-backed answers with exact page references, powered by a custom semantic retrieval pipeline using Azure OpenAI, embedding-based indexing, and vector similarity search", 
-      "Owned the full system stack from a PDF ingestion pipeline and FastAPI backend to a React and Tailwind chat interface with real-time streaming and image upload support; met with widespread acclaim and on track to launch as an official Ontario government resource", 
-      "Built an AI-powered Python system using Crawl4AI to monitor 80+ stakeholder websites; leveraged Azure OpenAI to identify relevant subpages and extract required information, presenting results in a searchable viewer with an embedded chatbot; replaced manual research workflows and actively used internally", 
-      "Developed a Python automation tool that extracts and validates data from government program application PDFs, applying custom parsing, cross-field validation logic, and automated Excel report generation; cut months of manual processing to seconds and adopted as a permanent internal tool", 
-      "Shipped a JavaScript web application for external use featuring hydraulic calculations for water system design, multi-step UI state management, client-side PDF generation, and full English/French localization support"
+      "Took multiple production tools from 0 to 1 for the Ontario government, owning each end to end, including a RAG chatbot on track to launch as an official provincial resource and an agentic ML system for crop detection and automated response",
+      "Worked full-stack across Python, FastAPI, React, and Azure, from system design and backend APIs to frontend interfaces"
     ],
   },
   {
     company: "University of Waterloo - Faculty of Engineering",
-    role: "Data Analyst",
+    role: "Web Developer",
     period: "May 2025 - Aug 2025",
-    techTerms: ["Power BI", "Google Analytics", "Looker Studio", "Jira"],
+    techTerms: ["Power BI", "Google Analytics", "Python"],
     bullets: [
-      "Developed web pages for the Faculty of Engineering website, serving content for 5,000+ monthly visitors",
-      "Built a Power BI dashboard integrating attendance and application data to analyze recruitment trends",
-      "Monitored web and user engagement metrics using Google Analytics and Looker Studio, delivering monthly performance insights",
-      "Resolved Jira tickets related to website issues and platform maintenance"
+      "Developed and maintained production web pages for the Faculty of Engineering site, and wrote Python tooling to support a platform migration",
+      "Used Power BI and Google Analytics to drive data-informed decisions across admissions and web performance"
     ],
   },
   {
     company: "Project Tech Careers",
     role: "Full Stack Developer",
     period: "Apr 2025 - Aug 2025",
-    techTerms: ["React", "Stripe", "AWS Amplify", "AWS Lambda", "DynamoDB"],
+    techTerms: ["React", "Stripe", "AWS Lambda", "PostgreSQL"],
     bullets: [
-      "Built an end-to-end registration and payment system using React, Stripe, and AWS Amplify, handling secure transactions for 70+ participants",
-      "Implemented backend systems with AWS Amplify, AWS Lambda, and DynamoDB to manage role-based access across admin and participant roles",
+      "Engineered a full-stack registration and payment system in React, Stripe, AWS Lambda, and PostgreSQL, with role-based access for admins and participants",
     ],
   },
   {
@@ -51,8 +45,7 @@ const experiences: ExperienceEntry[] = [
     period: "Mar 2025 - Aug 2025",
     techTerms: ["Figma"],
     bullets: [
-      "Designed high-fidelity Figma prototypes and UI components for the hackathon website with consistent branding and layouts",
-      "Collaborated with developers to translate designs into responsive frontend components and production UI features",
+      "Designed Figma components and a design system for the hackathon website, and shaped the brand identity across web, social, and sponsor materials",
     ],
   },
 ];
