@@ -1,53 +1,52 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import ProjectCard, { type Project } from "@/components/ProjectCard";
-import ProjectModal from "@/components/ProjectModal";
 
 const projects: Project[] = [
   {
+    name: "TellTale",
+    year: "2026",
+    tagline: "Interview Prep Platform",
+    description:
+      "Generates role-specific mock interview questions from a job description, tracks gaze and posture in real time via camera, scores responses for filler words and STAR-method adherence, and compiles it all into a coaching report.",
+    tech: ["Next.js", "TypeScript", "Supabase", "MediaPipe", "Groq", "Whisper"],
+    highlights: [
+      "Inference pipeline on Groq generating role-specific questions from parsed job descriptions in under 800ms",
+      "MediaPipe pose and gaze tracking running fully client-side at 30+ FPS with no backend dependency",
+      "Whisper transcription pipeline scoring filler-word density and STAR-method structure, compiled into weighted coaching reports",
+    ],
+    link: "https://github.com/jessiicaliu/telltale",
+  },
+  {
     name: "BuyOrBye",
     year: "2026",
-    tagline: "AI Shopping Copilot",
+    tagline: "Shopping Decision Engine",
     description:
-      "An AI-assisted shopping copilot that helps users decide whether to buy now, wait, or skip by weighing price, use case, and alternatives.",
-    tech: ["React", "Python", "LangChain", "JavaScript"],
+      "Paste an Amazon link and get a Buy or Skip verdict. Runs 6 parallel agents to pull live pricing, reviews, and competitor data, then scores it all into a weighted recommendation.",
+    tech: ["React", "Python", "FastAPI", "LangGraph", "LangChain", "Supabase", "OpenAI"],
     highlights: [
-      "Smart price analysis with historical data",
-      "Alternative product recommendations",
-      "Natural language decision reasoning",
+      "LangGraph state machine orchestrating 6 parallel agents to score and deliver weighted Buy/Skip verdicts",
+      "Multi-tenant auth with OAuth 2.0, JWT, and Supabase RLS enforcing per-user row-level data isolation",
+      "Live pricing and competitor data fetched via Tavily and Rainforest API and fed into the decision pipeline",
     ],
+    link: "https://github.com/jessiicaliu/BuyorBye",
   },
   {
-    name: "TrainVision",
-    year: "2024",
-    tagline: "Computer Vision Fitness",
+    name: "Rewindify",
+    year: "2025",
+    tagline: "Music History Tracker",
     description:
-      "Built a computer vision program to track exercise reps in real time using a webcam, and trained a model on custom exercises to adapt to individual movement patterns.",
-    tech: ["HTML/CSS", "Python", "OpenCV"],
+      "Pulls a full Spotify listening history and classifies every track as Ghost, Fading, or Rising based on how play frequency shifted over time.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Spotify API", "NextAuth.js"],
     highlights: [
-      "Real-time webcam pose estimation",
-      "Custom exercise model training",
-      "Automatic rep counting & form feedback",
+      "Set-based TypeScript algorithm tracking listening state transitions across time windows in Spotify history",
+      "Custom scoring model classifying tracks as Ghost, Fading, or Rising based on play frequency deltas over time",
+      "Cut load time by 60% by parallelizing Spotify API calls across Next.js Server Components",
     ],
-  },
-  {
-    name: "BudgetBuddy",
-    year: "2024",
-    tagline: "Financial Dashboard",
-    description:
-      "Built a financial tracker with user forms, automated calculations, and error validation, then designed a dynamic dashboard with pivot tables and graphs to visualize spending trends and insights.",
-    tech: ["Excel", "VBA"],
-    highlights: [
-      "Automated expense categorization",
-      "Interactive pivot table dashboards",
-      "Visual spending trend analysis",
-    ],
+    link: "https://github.com/jessiicaliu/rewindify",
   },
 ];
 
 const Projects = () => {
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
-
   return (
     <div className="px-6 md:px-16 lg:px-24 pt-20 pb-24">
       <div className="max-w-5xl mx-auto">
@@ -61,31 +60,21 @@ const Projects = () => {
           <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-primary/45 mb-3 font-semibold">
             ✦ Selected Work
           </p>
-              <h1 className="inline-block font-display text-4xl md:text-5xl leading-[1.32] pt-1 pb-2 text-primary font-medium">
+          <h1 className="inline-block font-display text-4xl md:text-5xl leading-[1.32] pt-1 pb-2 text-primary font-medium">
             Projects
           </h1>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {projects.map((project, i) => (
             <ProjectCard
               key={project.name}
               project={project}
               index={i}
-              onOpen={() => setActiveProject(project)}
             />
           ))}
         </div>
       </div>
-
-      <AnimatePresence>
-        {activeProject && (
-          <ProjectModal
-            project={activeProject}
-            onClose={() => setActiveProject(null)}
-          />
-        )}
-      </AnimatePresence>
     </div>
   );
 };

@@ -8,19 +8,21 @@ export type Project = {
   description: string;
   tech: string[];
   highlights: string[];
+  link: string;
   demoVideo?: string;
 };
 
 const ProjectCard = ({
   project,
   index,
-  onOpen,
 }: {
   project: Project;
   index: number;
-  onOpen: () => void;
 }) => (
-  <motion.div
+  <motion.a
+    href={project.link}
+    target="_blank"
+    rel="noopener noreferrer"
     className="group relative cursor-pointer rounded-[16px] p-4 md:p-5 transition-all duration-300 flex flex-col gap-2 min-h-[160px] border border-primary/10 ring-1 ring-inset ring-pink-400/40"
     style={{
       background: "linear-gradient(135deg, rgba(255,255,255,0.55) 60%, hsl(340,72%,98%) 100%)",
@@ -31,7 +33,6 @@ const ProjectCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-40px" }}
     transition={{ duration: 0.35, delay: index * 0.07 }}
-    onClick={onOpen}
     whileHover={{ y: -3, scale: 1.01 }}
   >
     <div className="flex items-center justify-between mb-1">
@@ -56,7 +57,7 @@ const ProjectCard = ({
     </p>
 
     <div className="flex flex-wrap gap-1 mt-auto">
-      {project.tech.slice(0, 3).map((t) => (
+      {project.tech.map((t) => (
         <span
           key={t}
           className="font-sans text-[10px] px-2 py-0.5 rounded-full bg-primary/5 text-primary/60 border border-primary/8 font-medium"
@@ -64,13 +65,8 @@ const ProjectCard = ({
           {t}
         </span>
       ))}
-      {project.tech.length > 3 && (
-        <span className="font-sans text-[10px] px-2 py-0.5 rounded-full bg-primary/5 text-primary/40 border border-primary/8 font-medium">
-          +{project.tech.length - 3} more
-        </span>
-      )}
     </div>
-  </motion.div>
+  </motion.a>
 );
 
 export default ProjectCard;

@@ -27,12 +27,21 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              className="mt-7"
+              className="mt-7 flex items-center gap-5"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               <ContactLinks />
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-sans text-[13px] font-medium px-3.5 py-1.5 rounded-full border border-primary/20 text-primary/60 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+              >
+                Resume
+                <span className="text-[11px] opacity-70">↓</span>
+              </a>
             </motion.div>
 
             <motion.div
@@ -93,12 +102,21 @@ const Home = () => {
           </motion.div>
 
           <motion.div
-            className="mt-7"
+            className="mt-7 flex items-center gap-5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
             <ContactLinks />
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 font-sans text-[13px] font-medium px-3.5 py-1.5 rounded-full border border-primary/20 text-primary/60 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+            >
+              Resume
+              <span className="text-[11px] opacity-70">↓</span>
+            </a>
           </motion.div>
         </div>
 
