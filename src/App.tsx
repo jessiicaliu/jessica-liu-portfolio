@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+// Trigger redeploy 
 import Navbar from "@/components/Navbar";
 import ClickSparkles from "@/components/ClickSparkles";
 import MusicPlayer from "@/components/MusicPlayer";
