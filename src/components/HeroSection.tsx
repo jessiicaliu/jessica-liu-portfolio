@@ -30,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name = "Jessica Liu" }) => {
             {/* Sparkle beside 'Liu' */}
             <motion.div
               aria-hidden="true"
-              className="absolute left-full ml-2 top-5 md:top-8 pointer-events-none select-none"
+              className="absolute left-full ml-2 top-4 md:top-7 pointer-events-none select-none"
               style={{ color: "rgb(255,208,215)", opacity: 0.62 }}
               initial={{ opacity: 0, scale: 0.4, rotate: -30 }}
               animate={{ opacity: 0.62, scale: 1, rotate: 0 }}
