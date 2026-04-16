@@ -130,7 +130,6 @@ const Navbar = () => {
                   )}
                   <link.icon
                     className="w-[17px] h-[17px] md:w-[18px] md:h-[18px] transition-colors duration-300"
-                    style={{ color: activeId === link.id ? "hsl(340 72% 62%)" : "hsl(340 72% 62% / 0.4)" }}
                     strokeWidth={activeId === link.id ? 2.2 : 1.7}
                   />
                   <span className="relative z-10">{link.label}</span>
