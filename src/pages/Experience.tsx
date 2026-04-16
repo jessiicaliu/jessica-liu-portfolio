@@ -1,193 +1,106 @@
-import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 type ExperienceEntry = {
   company: string;
   role: string;
   period: string;
-  bullets: string[];
+  description: string;
 };
 
 const experiences: ExperienceEntry[] = [
   {
     company: "Ontario Ministry of Agriculture",
     role: "AI Engineer Intern",
-    period: "Jan 2026 - Apr 2026",
-    bullets: [
-      "Took multiple production tools from 0 to 1, owning each from system design to deployment",
-      "Built a RAG chatbot on track to launch as an official provincial resource, and an agentic ML system for crop detection and automated response",
-      "Worked full-stack across Python, FastAPI, React, and Azure on both backend APIs and frontend interfaces",
-    ],
+    period: "Jan 2026 – Apr 2026",
+    description: "RAG, agentic AI, and data pipelines",
   },
   {
-    company: "University of Waterloo - Faculty of Engineering",
+    company: "University of Waterloo",
     role: "Data Analyst",
-    period: "May 2025 - Aug 2025",
-    bullets: [
-      "Developed and maintained production web pages for the Faculty of Engineering site, and wrote Python tooling to support a platform migration",
-      "Used Power BI and Google Analytics to drive data-informed decisions across admissions and web performance"
-    ],
+    period: "May 2025 – Aug 2025",
+    description: "Data visualization, analytics, and reporting",
   },
   {
     company: "Project Tech Careers",
     role: "Full Stack Developer",
-    period: "Apr 2025 - Aug 2025",
-    bullets: [
-      "Built a full-stack registration and payment system in React, Stripe, AWS Lambda, and PostgreSQL, with role-based access for admins and participants",
-    ],
+    period: "Apr 2025 – Aug 2025",
+    description: "Registration and payments system",
   },
   {
     company: "TechNova Hackathon",
     role: "UI/UX Designer",
-    period: "Mar 2025 - Aug 2025",
-    bullets: [
-      "Designed Figma components and a design system for the hackathon website, and shaped the brand identity across web, social, and sponsor materials",
-    ],
+    period: "Mar 2025 – Sep 2025",
+    description: "Website and graphic design",
   },
 ];
 
-
-const CardContent = ({ exp }: { exp: ExperienceEntry }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  const [hovered, setHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    setMouse({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
-  return (
-  <motion.div
-    whileHover={{ y: -2 }}
-    transition={{ type: "spring", stiffness: 300, damping: 24 }}
-  >
-    <div
-      ref={ref}
-      className="relative rounded-[16px] overflow-hidden transition-all duration-500 border border-primary/10 ring-1 ring-inset ring-pink-400/40"
-      style={{
-        background: "linear-gradient(135deg, rgba(255,255,255,0.94) 60%, hsl(340,72%,96% / 0.88) 90%)",
-        boxShadow: "0 2px 12px -4px hsl(340 50% 80% / 0.12)",
-        backdropFilter: "blur(8px)",
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {/* Cloudy mouse-follow glow */}
-      <div
-        className="absolute inset-0 rounded-[16px] pointer-events-none transition-opacity duration-300"
-        style={{
-          opacity: hovered ? 1 : 0,
-          background: `
-            radial-gradient(ellipse 500px 350px at ${mouse.x}px ${mouse.y}px, hsl(340 60% 75% / 0.035), transparent 30%),
-            radial-gradient(ellipse 320px 240px at ${mouse.x - 40}px ${mouse.y + 30}px, hsl(320 50% 80% / 0.02), transparent 30%)
-          `,
-        }}
-      />
-
-        <div className="px-4 py-3 md:px-5 md:py-3.5">
-          {/* Header row: role + period pill */}
-          <div className="flex items-start justify-between gap-4 mb-0.5">
-            <h3 className="font-display text-[0.95rem] md:text-[1rem] text-foreground/90 leading-snug">
-              {exp.role}
-            </h3>
-            <span className="shrink-0 inline-block font-sans text-[10px] px-2 py-0.5 rounded-full mt-1 bg-primary/5 text-primary/60 border border-primary/8 font-bold">
-              {exp.period}
-            </span>
-          </div>
-
-          {/* Company */}
-          <p className="font-sans text-[12px] text-primary/80 font-semibold leading-snug mb-3">
-            {exp.company}
-          </p>
-
-          {/* Bullets */}
-          <ul className="space-y-1.5">
-            {exp.bullets.map((bullet, j) => (
-              <li
-                key={j}
-                className="font-sans text-[13px] leading-[1.6] text-foreground/60 flex items-start gap-2.5 group/b"
-              >
-                <span
-                  className="mt-[7px] shrink-0 w-[4px] h-[4px] rounded-full group-hover/b:scale-150 transition-all duration-300"
-                  style={{
-                    background: "linear-gradient(135deg, hsl(340 72% 62% / 0.75), hsl(320 50% 70% / 0.65))",
-                  }}
-                />
-                <span className="group-hover/b:text-foreground/75 transition-colors duration-300">
-                  {bullet}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
 const Experience = () => {
   return (
-    <div className="px-6 md:px-16 lg:px-24 pt-10 pb-10">
+    <div className="px-6 md:px-16 lg:px-24 pt-4 pb-10">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
-          className="mb-10"
+          className="mb-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <p className="text-[11px] font-sans uppercase tracking-[0.35em] text-primary/40 mb-3 font-semibold">
-            ✦ Where I've Been
-          </p>
-          <h1 className="font-display text-3xl md:text-4xl leading-[1.32] pt-1 pb-2 text-primary font-medium">Experience</h1>
+          <h1 className="font-display text-3xl md:text-4xl leading-[1.32] pt-1 pb-2 text-primary font-medium">
+            Experience
+          </h1>
         </motion.div>
 
-        {/* Timeline */}
-        <div>
+        {/* Experience List */}
+        <div className="flex flex-col">
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.company}
-              className="relative pl-9 pb-6"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              className="group relative py-6 px-1 transition-all duration-300"
+              initial={{ opacity: 0, y: 6 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.35, delay: i * 0.07 }}
+              transition={{ duration: 0.3, delay: i * 0.07 }}
             >
-              {/* Heart dot */}
-              <motion.span
-                className="absolute select-none"
-                style={{ left: 1, top: 25, fontSize: 9, lineHeight: 1, color: "hsl(340 72% 62% / 0.6)" }}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07 + 0.1, duration: 0.3 }}
-              >
-                ♥
-              </motion.span>
+              {/* Subtle background reveal on hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{ background: "linear-gradient(to right, hsl(340,72%,98.5%) 0%, transparent 100%)" }}
+              />
 
-              {/* Line segment growing downward */}
-              {i < experiences.length - 1 && (
-                <motion.div
-                  className="absolute w-px"
-                  style={{
-                    left: 5,
-                    top: 37,
-                    bottom: 0,
-                    background: "linear-gradient(to bottom, hsl(340 72% 62% / 0.2), hsl(340 72% 62% / 0.05))",
-                    transformOrigin: "top",
-                  }}
-                  initial={{ scaleY: 0 }}
-                  whileInView={{ scaleY: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: i * 0.07 + 0.2, ease: [0.22, 1, 0.36, 1] }}
+              <div className="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                {/* Info block */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-baseline gap-x-2.5 mb-1.5">
+                    <h3 className="font-sans font-medium tracking-tight text-[1.05rem] text-foreground/80 group-hover:text-primary transition-colors duration-300">
+                      {exp.role}
+                    </h3>
+                    <span className="font-sans text-[12px] text-primary/50 font-medium whitespace-nowrap">
+                      {exp.company}
+                    </span>
+                  </div>
+                  <p className="font-sans text-[13px] text-foreground/45 leading-relaxed group-hover:text-foreground/65 transition-colors duration-300">
+                    {exp.description}
+                  </p>
+                </div>
+
+                {/* Period tag */}
+                <div className="shrink-0 self-start sm:self-center">
+                  <span className="font-sans text-[10px] text-foreground/30 font-medium tracking-wide whitespace-nowrap">
+                    {exp.period}
+                  </span>
+                </div>
+              </div>
+
+              {/* Minimal Divider System */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px]">
+                {/* Default Line (Minimal) */}
+                <div className="absolute inset-0 bg-primary/10 group-hover:opacity-0 transition-opacity duration-300" />
+                {/* Hover Gradient Line (Liu & Ministry of Ag Pinks) */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: "linear-gradient(to right, rgb(255,208,215) 0%, hsl(340, 72%, 62%) 100%)" }}
                 />
-              )}
-
-              <CardContent exp={exp} />
+              </div>
             </motion.div>
           ))}
         </div>

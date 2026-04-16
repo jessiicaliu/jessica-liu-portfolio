@@ -12,14 +12,14 @@ const defaultText = (
     <br /><br />
     When I'm not at my desk, you'll find me at the gym, catching a concert, or grabbing
     sushi with friends. I also enjoy volunteering and staying connected to the engineering
-    community.
+    community!
     <br /><br />
     Open to <span className="font-semibold text-foreground/70">SWE, data, and product</span> opportunities for <span className="font-semibold text-foreground/70">Fall 2026</span> & <span className="font-semibold text-foreground/70">Summer 2027</span>.
   </>
 );
 
 const ProfileDescription: React.FC<ProfileDescriptionProps> = ({ children }) => (
-  <p className="font-sans text-[13.5px] md:text-[14px] text-foreground/55 leading-relaxed max-w-xl">
+  <p className="font-sans text-[13.5px] md:text-[14px] text-foreground/55 leading-relaxed max-w-[540px]">
     {children || defaultText}
   </p>
 );

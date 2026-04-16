@@ -60,15 +60,6 @@ const Contact = () => {
         />
 
         {/* Eyebrow */}
-        <motion.p
-          className="text-[11px] font-sans uppercase tracking-[0.3em] text-primary/45 mb-3 font-semibold"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-        >
-          ✦ Let's Connect
-        </motion.p>
 
         {/* Heading + airplane */}
         <motion.div
@@ -81,8 +72,8 @@ const Contact = () => {
           <h1 className="font-display text-3xl md:text-4xl text-primary">Say Hi!</h1>
           <motion.div
             className="relative flex items-center justify-center w-10 h-10"
-            animate={{ y: [0, -3, 0], x: [0, 1, 0] }}
-            transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ y: [0, -1.5, 0], x: [0, 0.5, 0] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
           >
             <motion.span
               className="absolute left-0 top-5 h-1.5 w-1.5 rounded-full bg-pink-soft/80"
@@ -99,8 +90,8 @@ const Contact = () => {
               alt=""
               aria-hidden="true"
               className="relative z-10 w-9 h-9 select-none pointer-events-none drop-shadow-[0_6px_10px_rgba(219,39,119,0.12)]"
-              animate={{ y: [0, -4, 0], rotate: [-6, 3, -6], scale: [1, 1.04, 1] }}
-              transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ y: [0, -2, 0], rotate: [-2, 1.5, -2], scale: [1, 1.02, 1] }}
+              transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.div>
         </motion.div>
@@ -124,19 +115,19 @@ const Contact = () => {
               href={s.href}
               target={s.href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-primary/12 bg-pink-soft/10 hover:bg-pink-soft/25 hover:border-primary/25 transition-all duration-300 w-full sm:w-auto"
-              initial={{ opacity: 0, y: 6 }}
+              className="group flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-primary/12 bg-pink-soft/10 hover:bg-pink-soft/25 hover:border-primary/25 transition-all duration-300 w-full sm:w-auto"
+              initial={{ opacity: 0, y: 3 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.15 + i * 0.07, duration: 0.35 }}
-              whileHover={{ y: -3 }}
+              transition={{ delay: 0.12 + i * 0.05, duration: 0.35 }}
+              whileHover={{ y: -1.5 }}
             >
-              <s.icon className={`w-6 h-6 text-primary/80 transition-colors duration-300 ${s.color} shrink-0 drop-shadow-[0_1px_2px_rgba(219,39,119,0.08)]`} />
-              <div className="flex flex-col gap-0.5 flex-1">
-                <span className="font-sans text-base text-foreground/85 group-hover:text-primary transition-colors duration-300 font-semibold leading-none">
+              <s.icon className={`w-5 h-5 text-primary/80 transition-colors duration-300 ${s.color} shrink-0 drop-shadow-[0_1px_2px_rgba(219,39,119,0.08)]`} />
+              <div className="flex flex-col gap-0 flex-1">
+                <span className="font-sans text-sm text-foreground/85 group-hover:text-primary transition-colors duration-300 font-semibold leading-tight">
                   {s.label}
                 </span>
-                <span className="font-sans text-[13.5px] text-foreground/60 group-hover:text-primary/80 transition-colors duration-300 leading-none">
+                <span className="font-sans text-[12px] text-foreground/60 group-hover:text-primary/80 transition-colors duration-300 leading-tight">
                   {s.handle}
                 </span>
               </div>

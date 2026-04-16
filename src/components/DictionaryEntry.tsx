@@ -12,28 +12,24 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
     <>
       {/* Desktop / tablet */}
       <div
-        className={`relative max-w-2xl min-w-[520px] hidden sm:block ${className}`}
+        className={`relative max-w-[540px] ${className}`}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
         <motion.div
-          className="relative rounded-xl px-10 py-6 md:px-14 md:py-7 border border-primary/10 bg-white/60 backdrop-blur-[6px] shadow-none ring-1 ring-inset ring-pink-400/40"
+          className="relative rounded-xl px-6 py-5 md:px-8 md:py-6 border border-primary/10 bg-white/60 backdrop-blur-[6px] shadow-none ring-1 ring-inset ring-pink-400/40"
           style={{
             fontFamily: "var(--font-sans)",
             background: "linear-gradient(135deg, rgba(255,255,255,0.55) 60%, hsl(340,72%,98%) 100%)",
             boxShadow: "0 2px 12px 0 hsl(340,72%,80%,0.13)",
           }}
-          initial={{ opacity: 0, y: 10, rotate: -0.4 }}
-          animate={{ opacity: 1, y: hovered ? -4 : 0, rotate: hovered ? 0.6 : 0 }}
-          transition={
-            hovered
-              ? { type: "spring", stiffness: 48, damping: 28 }
-              : { type: "spring", stiffness: 36, damping: 26, delay: 0 }
-          }
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 0.45, type: "spring", stiffness: 36, damping: 26 }}
         >
           {/* Washi tape */}
           <motion.div
-            className="absolute -top-2 -left-2 z-20 w-14 h-[18px] rounded-[2px]"
+            className="absolute -top-2 -left-2 z-20 w-12 h-[15px] rounded-[2px]"
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 220, damping: 18, delay: 1.2 }}
@@ -45,7 +41,7 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
           />
           {/* Star sticker */}
           <motion.div
-            className="absolute -top-5 -right-5 z-30 w-16 h-16 pointer-events-none"
+            className="absolute -top-4 -right-4 z-30 w-14 h-14 pointer-events-none"
             initial={{ scale: 0, rotate: 30 }}
             animate={{ scale: 1, rotate: 14 }}
             transition={{ type: "spring", stiffness: 280, damping: 18, delay: 0.95 }}
@@ -53,10 +49,10 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
             <img src="/images/star.svg" alt="" aria-hidden="true" className="w-full h-full object-contain select-none pointer-events-none" />
           </motion.div>
 
-          <h3 className="text-[1.18rem] font-normal tracking-tight text-[#18181a] drop-shadow-sm" style={{ fontFamily: "var(--font-sans)" }}>
+          <h3 className="text-[1.05rem] font-normal tracking-tight text-[#18181a] drop-shadow-sm" style={{ fontFamily: "var(--font-sans)" }}>
             Management Engineering
           </h3>
-          <p className="mt-0.5 text-[12px] tracking-wide text-foreground/40">
+          <p className="mt-0.5 text-[11px] tracking-wide text-foreground/40">
             <span style={{ fontFamily: "serif", fontStyle: "italic", letterSpacing: "0.02em" }}>
               /ˌmæn.ɪdʒ.mənt ˌen.dʒɪˈnɪr.ɪŋ/
             </span>
@@ -64,12 +60,12 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
             <span className="italic">noun</span>
           </p>
           <div className="my-3 h-px bg-gradient-to-r from-foreground/10 via-foreground/5 to-transparent" />
-          <p className="text-[13.5px] leading-[1.7] text-foreground/70">
-            a multidisciplinary field combining{" "}
+          <p className="text-[13px] leading-[1.65] text-foreground/70">
+            an interdisciplinary field combining{" "}
             <span className="font-medium text-primary/70">software engineering</span>,{" "}
             <span className="font-medium text-primary/70">business</span>, and{" "}
             <span className="font-medium text-primary/70">data</span>{" "}
-            to design and optimize complex systems
+            to design and optimize systems for decision-making
           </p>
         </motion.div>
       </div>
@@ -77,7 +73,7 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
       {/* Mobile */}
       <div className={`relative w-full block sm:hidden ${className}`}>
         <motion.div
-          className="relative rounded-lg px-5 py-4 border border-primary/10 bg-white/70 backdrop-blur-[4px] ring-1 ring-inset ring-pink-400/30"
+          className="relative rounded-lg px-4 py-3 border border-primary/10 bg-white/70 backdrop-blur-[4px] ring-1 ring-inset ring-pink-400/30"
           style={{
             fontFamily: "var(--font-sans)",
             background: "linear-gradient(135deg, rgba(255,255,255,0.55) 60%, hsl(340,72%,98%) 100%)",
@@ -89,7 +85,7 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
         >
           {/* Washi tape */}
           <motion.div
-            className="absolute -top-2 -left-2 z-20 w-10 h-[13px] rounded-[2px]"
+            className="absolute -top-1.5 -left-1.5 z-20 w-8 h-[11px] rounded-[2px]"
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 220, damping: 18, delay: 1.2 }}
@@ -101,7 +97,7 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
           />
           {/* Star sticker */}
           <motion.div
-            className="absolute -top-4 -right-3 z-30 w-11 h-11 pointer-events-none"
+            className="absolute -top-3.5 -right-2.5 z-30 w-9 h-9 pointer-events-none"
             initial={{ scale: 0, rotate: 30 }}
             animate={{ scale: 1, rotate: 14 }}
             transition={{ type: "spring", stiffness: 280, damping: 18, delay: 0.95 }}
@@ -109,10 +105,10 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
             <img src="/images/star.svg" alt="" aria-hidden="true" className="w-full h-full object-contain select-none pointer-events-none" />
           </motion.div>
 
-          <h3 className="text-[0.95rem] font-normal tracking-tight text-[#18181a] drop-shadow-sm pr-8" style={{ fontFamily: "var(--font-sans)" }}>
+          <h3 className="text-[0.88rem] font-normal tracking-tight text-[#18181a] drop-shadow-sm pr-8" style={{ fontFamily: "var(--font-sans)" }}>
             Management Engineering
           </h3>
-          <p className="mt-0.5 text-[10.5px] tracking-wide text-foreground/40">
+          <p className="mt-0.5 text-[10px] tracking-wide text-foreground/40">
             <span style={{ fontFamily: "serif", fontStyle: "italic", letterSpacing: "0.02em" }}>
               /ˌmæn.ɪdʒ.mənt ˌen.dʒɪˈnɪr.ɪŋ/
             </span>
@@ -120,12 +116,12 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
             <span className="italic">noun</span>
           </p>
           <div className="my-2 h-px bg-gradient-to-r from-foreground/10 via-foreground/5 to-transparent" />
-          <p className="text-[12px] leading-[1.6] text-foreground/70">
-            a multidisciplinary field combining{" "}
+          <p className="text-[11.5px] leading-[1.6] text-foreground/70">
+            an interdisciplinary field combining{" "}
             <span className="font-medium text-primary/70">software engineering</span>,{" "}
             <span className="font-medium text-primary/70">business</span>, and{" "}
             <span className="font-medium text-primary/70">data</span>{" "}
-            to design and optimize complex systems
+            to design and optimize systems and decision-making processes
           </p>
         </motion.div>
       </div>

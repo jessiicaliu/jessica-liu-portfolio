@@ -15,13 +15,7 @@ const SectionDivider = () => (
     transition={{ duration: 0.5 }}
   >
     <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/30 to-primary/40" />
-    <motion.span
-      className="mx-4 text-xs text-primary/60 font-sans select-none"
-      animate={{ opacity: [0.5, 0.85, 0.5] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-    >
-      ✦
-    </motion.span>
+    <div className="mx-4 w-1" />
     <div className="flex-1 h-px bg-gradient-to-l from-transparent via-primary/30 to-primary/40" />
   </motion.div>
 );

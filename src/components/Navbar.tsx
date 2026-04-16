@@ -11,7 +11,7 @@ type NavLink = {
 };
 
 const links: NavLink[] = [
-  { href: "#about", label: "About Me", id: "about", icon: Home },
+  { href: "#about", label: "About", id: "about", icon: Home },
   { href: "#experience", label: "Experience", id: "experience", icon: Briefcase },
   { href: "#projects", label: "Projects", id: "projects", icon: FolderOpen },
   { href: "#stack", label: "Stack", id: "stack", icon: Layers },
@@ -102,7 +102,6 @@ const Navbar = () => {
       >
         <motion.div
           className="bg-glass rounded-full px-6 py-2.5 sparkle-shadow"
-          whileHover={{ scale: 1.01 }}
           transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
           <div className="flex items-center gap-0.5 text-sm font-sans tracking-wide">
@@ -119,7 +118,7 @@ const Navbar = () => {
                   className={`relative px-3.5 py-1.5 rounded-full transition-colors duration-300 font-medium flex items-center gap-2 ${
                     activeId === link.id
                       ? "text-primary"
-                      : "text-primary/40 hover:text-primary hover:bg-pink-soft/40"
+                      : "text-primary/40 hover:text-primary hover:bg-primary/10"
                   }`}
                 >
                   {activeId === link.id && (
@@ -137,14 +136,12 @@ const Navbar = () => {
                   <span className="relative z-10">{link.label}</span>
                 </a>
                 {i < links.length - 1 && (
-                  <motion.span
-                    className="text-[11px] mx-1 select-none animate-sparkle"
-                    style={{ color: "hsl(340 72% 62%)", animationDelay: `${i * 0.4}s`, display: "inline-block" }}
-                    whileHover={{ scale: 1.6, rotate: 20 }}
-                    transition={{ type: "spring", stiffness: 500, damping: 14 }}
+                  <span
+                    className="text-[11px] mx-1 select-none opacity-40"
+                    style={{ color: "hsl(340 72% 62%)" }}
                   >
                     ♡
-                  </motion.span>
+                  </span>
                 )}
               </motion.span>
             ))}
@@ -202,7 +199,7 @@ const Navbar = () => {
                   className="relative z-10 font-sans text-[10px] font-semibold tracking-wide transition-colors duration-300 leading-none"
                   style={{ color: isActive ? "hsl(340 72% 62%)" : "hsl(340 72% 62% / 0.4)" }}
                 >
-                  {link.id === "about" ? "About" : link.label}
+                  {link.label}
                 </span>
 
                 {isActive && (
