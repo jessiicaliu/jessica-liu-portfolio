@@ -16,7 +16,7 @@ const experiences: ExperienceEntry[] = [
   },
   {
     company: "University of Waterloo",
-    role: "Data Analyst",
+    role: "Data Analyst Intern",
     period: "May 2025 – Aug 2025",
     description: "Data visualization, analytics, and reporting",
   },
