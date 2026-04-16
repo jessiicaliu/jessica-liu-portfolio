@@ -84,7 +84,7 @@ const MusicPlayer = () => {
     : { opacity: 0, y: 14, scale: 0.98 };
 
   return (
-    <div className="fixed z-50 flex items-end gap-2 right-4 bottom-auto top-4 md:top-auto md:bottom-6">
+    <div className="fixed z-50 flex items-end gap-2 right-4 bottom-auto top-2 md:top-auto md:bottom-6">
       <audio ref={audioRef} src={AUDIO_SRC} preload="metadata" />
 
       <motion.div

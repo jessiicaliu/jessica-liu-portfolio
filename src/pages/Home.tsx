@@ -7,7 +7,7 @@ import PolaroidCard from "@/components/PolaroidCard";
 
 const Home = () => {
   return (
-    <div className="flex flex-col justify-start pt-8 md:pt-24 lg:pt-28 pb-10 px-8 md:px-16 lg:px-24">
+    <div className="flex flex-col justify-start pt-14 md:pt-24 lg:pt-28 pb-10 px-6 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto w-full">
 
         {/* ── Desktop layout ── */}
@@ -68,14 +68,14 @@ const Home = () => {
             <HeroSection name="Jessica Liu" />
           </div>
 
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-10">
             <div className="w-full max-w-[280px]">
               <PolaroidCard />
             </div>
           </div>
 
           <motion.div
-            className="mt-8"
+            className="mt-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.35, duration: 0.6 }}
@@ -84,7 +84,7 @@ const Home = () => {
           </motion.div>
 
           <motion.div
-            className="mt-9"
+            className="mt-11"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.45, duration: 0.55 }}
@@ -93,7 +93,7 @@ const Home = () => {
           </motion.div>
 
           <motion.div
-            className="mt-7 flex items-center gap-5"
+            className="mt-9 flex items-center gap-5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}

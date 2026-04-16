@@ -11,18 +11,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name = "Jessica Liu" }) => {
     <>
       <motion.p
         className="font-sans italic text-sm text-foreground/55 mb-2 tracking-wide"
-        initial={{ opacity: 0, x: -3 }}
+        initial={{ opacity: 0, x: -6 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         Hi, I'm
       </motion.p>
       <div className="relative">
         <motion.h1
-          className="font-display text-4xl md:text-5xl lg:text-[4.5rem] leading-[0.9] tracking-[-0.01em] text-foreground"
-          initial={{ opacity: 0, y: 8 }}
+          className="font-display text-5xl md:text-5xl lg:text-[4.5rem] leading-[1.05] tracking-[-0.01em] text-foreground"
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
           <span className="text-foreground/90">{name.split(" ")[0]}</span>
           <br />
@@ -30,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name = "Jessica Liu" }) => {
             {/* Sparkle beside 'Liu' */}
             <motion.div
               aria-hidden="true"
-              className="absolute left-full ml-2 top-8 pointer-events-none select-none"
+              className="absolute left-full ml-2 top-5 md:top-8 pointer-events-none select-none"
               style={{ color: "rgb(255,208,215)", opacity: 0.62 }}
               initial={{ opacity: 0, scale: 0.4, rotate: -30 }}
               animate={{ opacity: 0.62, scale: 1, rotate: 0 }}
@@ -73,9 +73,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ name = "Jessica Liu" }) => {
       </div>
       <motion.p
         className="mt-3 font-sans text-sm md:text-base text-foreground/60"
-        initial={{ opacity: 0, y: 4 }}
+        initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.4 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
       >
         <span className="mr-2">a</span>
         <TypingText />
