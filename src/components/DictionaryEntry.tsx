@@ -65,7 +65,7 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
             <span className="font-medium text-primary/70">software engineering</span>,{" "}
             <span className="font-medium text-primary/70">business</span>, and{" "}
             <span className="font-medium text-primary/70">data</span>{" "}
-            to design and optimize systems for decision-making
+            to optimize systems for decision-making
           </p>
         </motion.div>
       </div>
