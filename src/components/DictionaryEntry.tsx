@@ -12,7 +12,7 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
     <>
       {/* Desktop / tablet */}
       <div
-        className={`relative max-w-2xl min-w-[520px] hidden sm:block ${className}`}
+        className={`relative max-w-[540px] min-w-[460px] hidden sm:block ${className}`}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -61,11 +61,11 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
           </p>
           <div className="my-3 h-px bg-gradient-to-r from-foreground/10 via-foreground/5 to-transparent" />
           <p className="text-[13px] leading-[1.65] text-foreground/70">
-            an interdisciplinary field combining{" "}
-            <span className="font-medium text-primary/70">software engineering</span>,{" "}
-            <span className="font-medium text-primary/70">business</span>, and{" "}
-            <span className="font-medium text-primary/70">data</span>{" "}
-            to optimize systems for decision-making
+            an interdisciplinary field that combines{" "}
+            <span className="font-medium text-primary/70">software</span>,{" "}
+            <span className="font-medium text-primary/70">data</span>, and{" "}
+            <span className="font-medium text-primary/70">business</span>{" "}
+            to design and optimize systems for informed decision-making
           </p>
         </motion.div>
       </div>
@@ -105,10 +105,10 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
             <img src="/images/star.svg" alt="" aria-hidden="true" className="w-full h-full object-contain select-none pointer-events-none" />
           </motion.div>
 
-          <h3 className="text-[0.95rem] font-normal tracking-tight text-[#18181a] drop-shadow-sm pr-8" style={{ fontFamily: "var(--font-sans)" }}>
+          <h3 className="text-[0.8rem] font-normal tracking-tight text-[#18181a] drop-shadow-sm pr-8" style={{ fontFamily: "var(--font-sans)" }}>
             Management Engineering
           </h3>
-          <p className="mt-0.5 text-[10.5px] tracking-wide text-foreground/40">
+          <p className="mt-0.5 text-[9.5px] tracking-wide text-foreground/40">
             <span style={{ fontFamily: "serif", fontStyle: "italic", letterSpacing: "0.02em" }}>
               /ˌmæn.ɪdʒ.mənt ˌen.dʒɪˈnɪr.ɪŋ/
             </span>
@@ -116,12 +116,12 @@ const DictionaryEntry = ({ className = "" }: DictionaryEntryProps) => {
             <span className="italic">noun</span>
           </p>
           <div className="my-2 h-px bg-gradient-to-r from-foreground/10 via-foreground/5 to-transparent" />
-          <p className="text-[12px] leading-[1.6] text-foreground/70">
-            an interdisciplinary field combining{" "}
-            <span className="font-medium text-primary/70">software engineering</span>,{" "}
-            <span className="font-medium text-primary/70">business</span>, and{" "}
-            <span className="font-medium text-primary/70">data</span>{" "}
-            to design and optimize systems and decision-making processes
+          <p className="text-[10.5px] leading-[1.5] text-foreground/70">
+            an interdisciplinary field that combines{" "}
+            <span className="font-medium text-primary/70">software</span>,{" "}
+            <span className="font-medium text-primary/70">data</span>, and{" "}
+            <span className="font-medium text-primary/70">business</span>{" "}
+            to design and optimize systems for informed decision-making
           </p>
         </motion.div>
       </div>
